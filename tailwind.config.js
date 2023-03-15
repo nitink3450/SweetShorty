@@ -9,7 +9,14 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        '2xl': { 'min': '1280px' },
+        '3xl': { 'min': '1536px' },
+        '4xl': { 'min': '1920px' },
+        '9xx': { 'min-width': '916px' },
+      },
+    },
     fontFamily: {
       Manrope: ['Manrope', 'sans-serif'],
       Poppins: ['Poppins', 'sans-serif'],
