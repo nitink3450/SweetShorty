@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import Button from "../common/button";
+import Button from "../common/button1";
 import { TiThMenu, TiPlus } from "react-icons/ti";
 import { CgMenuGridR, CgLayoutGrid } from "react-icons/cg";
 import Image from "next/image";
+import Button2 from "../common/button2";
 const Header = () => {
   let Links = [
     { name: "Service", link: "/" },
@@ -12,8 +13,8 @@ const Header = () => {
   let [open, setOpen] = useState(false);
   return (
     <>
-    {/* shadow-md  */}
-      <div className="w-full sticky top-0 left-0 right-0">
+      {/* shadow-md  */}
+      <div className="w-full sticky top-0 left-0 right-0 z-50">
         <div className="9xx:flex items-center justify-between bg-white py-4 9xx:px-10 px-7">
           <div className="cursor-pointer flex items-center ">
             <div className="h-[35px] w-[35px] flex justify-center items-center mr-[10px]">
@@ -52,8 +53,10 @@ const Header = () => {
                 </a>
               </li>
             ))}
-            <div className="9xx:ml-[100px] flex
-            9xx:flex-row flex-col 9xx:justify-center items-start 9xx:items-center 9xx:gap-0 gap-10">
+            <div
+              className="9xx:ml-[100px] flex
+            9xx:flex-row flex-col 9xx:justify-center items-start 9xx:items-center 9xx:gap-0 gap-10"
+            >
               <li className="9xx:ml-8 text-xl 9xx:my-0">
                 <a
                   href="#"
@@ -62,7 +65,10 @@ const Header = () => {
                   Login
                 </a>
               </li>
-              <Button>SignUp</Button>
+              {/* <Button>SignUp</Button> */}
+              <Button2 mr="group-hover:mr-[20px]" ml="ml-[3px]" class="lg:p-[6px_18px] p-[8px_20px] lg:text-xl text-[17.37px]">
+              SignUp
+              </Button2>
             </div>
           </ul>
         </div>
