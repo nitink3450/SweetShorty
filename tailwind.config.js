@@ -11,10 +11,12 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        '2xl': { 'min': '1280px' },
+        '2xl': { 'min': '1200px' },
         '3xl': { 'min': '1536px' },
         '4xl': { 'min': '1920px' },
         '9xx': { 'min-width': '916px' },
+        '11x': { 'min-width': '1110px' },
+        '4xx': { 'min-width': '450px' },
       },
     },
     fontFamily: {
