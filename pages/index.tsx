@@ -1,4 +1,3 @@
-import SwenflySvg from "@/components/global/common/svgs";
 import Footer from "@/components/global/footer";
 import Header from "@/components/global/header";
 import Banner from "@/components/pages/sec-banner";
