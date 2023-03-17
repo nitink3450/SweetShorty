@@ -17,6 +17,7 @@ module.exports = {
         '9xx': { 'min-width': '916px' },
         '11x': { 'min-width': '1110px' },
         '4xx': { 'min-width': '450px' },
+        '6xx': { 'min-width': '600px' },
       },
     },
     fontFamily: {
