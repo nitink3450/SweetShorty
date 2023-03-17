@@ -19,6 +19,7 @@ const ContactUs = () => {
           <div className="m-7">
             <form
               action="https://api.web3forms.com/submit"
+              // action="mailto:nitin@gmail.com"
               method="POST"
               id="form"
               className="needs-validation"
@@ -27,7 +28,8 @@ const ContactUs = () => {
               <input
                 type="hidden"
                 name="access_key"
-                value="YOUR_ACCESS_KEY_HERE"
+                value="c5e3a9f1-f206-4600-b8ce-84367a9c67a0"
+                // value="nitinkanhurkar2016@gmail.com"
               />
               <input
                 type="hidden"
