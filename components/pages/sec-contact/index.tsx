@@ -2,6 +2,8 @@ import Button2 from "@/components/global/common/button2";
 import React from "react";
 
 const ContactUs = () => {
+  const accessKey = process.env.NEXT_PUBLIC_YOUR_ACCESS_KEY;
+ 
   return (
     <>
       {/* <div className="flex mt-[20px] lg:mt-[50px] justify-center items-center"> */}
@@ -24,11 +26,7 @@ const ContactUs = () => {
               className="needs-validation"
               noValidate
             >
-              <input
-                type="hidden"
-                name="access_key"
-                value="c5e3a9f1-f206-4600-b8ce-84367a9c67a0"
-              />
+              <input type="hidden" name="access_key" value={accessKey} />
               <input
                 type="hidden"
                 name="subject"
