@@ -4,7 +4,7 @@ import { BiLink } from "react-icons/bi";
 const Url = () => {
   return (
     <>
-      <div className="w-full flex justify-center items-center flex-col mt-[50px] lg:mt-[100px] gap-[5px]">
+      <div  className=" w-full flex justify-center items-center flex-col mt-[50px] lg:mt-[100px] gap-[5px]">
         <div className="w-full flex justify-center items-center flex-col gap-[5px]">
           <div className="lg:text-[40px] md:text-[20px] lg:text-start text-center text-[25px] font-semibold text-[#232127] lg:tracking-[-3px] tracking-[-1px] leading-[0.9]">
             {`We’ve`}
@@ -39,15 +39,15 @@ const Url = () => {
           <Button2
             mr="group-hover:mr-[30px]"
             ml="ml-[30px]"
-            class="lg:p-[11px_33px] p-[8px_20px] lg:text-[25px] text-[17.37px]"
+            class="lg:p-[11px_33px] p-[8px_20px] lg:text-[25px] text-[17.37px] outline outline-[0.1px] outline-[#30C59B] focus-within:outline-[#000]"
           >
             Shorten
           </Button2>
         </div>
         <div className="lg:text-[14px] text-[10px] text-center lg:text-start font-normal text-[#9e9aa7]  leading-[1.5] mt-[10px] lg:mt-[10px]">
           URL Shortener → By using our service you accept the{" "}
-          <span className="text-[#1e5af9]">Terms of service</span> and{" "}
-          <span className="text-[#1e5af9]">Privacy.</span>
+          <span className="text-[#1e5af9] cursor-pointer">Terms of service</span> and{" "}
+          <span className="text-[#1e5af9] cursor-pointer">Privacy.</span>
         </div>
       </div>
     </>

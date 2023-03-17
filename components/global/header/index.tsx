@@ -4,11 +4,12 @@ import { TiThMenu, TiPlus } from "react-icons/ti";
 import { CgMenuGridR, CgLayoutGrid } from "react-icons/cg";
 import Image from "next/image";
 import Button2 from "../common/button2";
+import { LogoSvg, SwenflySvg } from "../common/svgs";
 const Header = () => {
   let Links = [
-    { name: "Service", link: "/" },
-    { name: "About", link: "/" },
-    { name: "Contact Us", link: "/" },
+    { name: "Service", link: "#service"},
+    { name: "About", link: "#about" },
+    { name: "Contact Us", link: "#contact"},
   ];
   let [open, setOpen] = useState(false);
   return (
@@ -16,18 +17,28 @@ const Header = () => {
       {/* shadow-md  */}
       <div className="w-full sticky top-0 left-0 right-0 z-50">
         <div className="9xx:flex items-center justify-between bg-white py-4 9xx:px-10 px-7">
-          <div className="cursor-pointer flex items-center ">
-            <div className="h-[35px] w-[35px] flex justify-center items-center mr-[10px]">
+          <div className="cursor-pointer gap-[10px] flex items-center ">
+            {/* <div className="h-[35px] w-[35px] flex justify-center items-center mr-[10px]">
               <Image src={"/logo.svg"} height={35} width={35} alt="logo" />
-            </div>
-            <div className="h-[35px] w-[125px] flex justify-center items-center">
+            </div> */}
+            <LogoSvg
+              className="text-[#7b1fa2] transition ease-in-out duration-500  hover:text-[#2BD0D0]"
+              height="35px"
+              width="35px"
+            />
+            <SwenflySvg
+              className="text-black transition ease-in-out duration-300 hover:text-[#7b1fa2]"
+              height="35px"
+              width="125px"
+            />
+            {/* <div className="h-[35px] w-[125px] flex justify-center items-center">
               <Image
                 src={"/icons/swenfly.svg"}
                 height={35}
                 width={125}
                 alt="logo"
               />
-            </div>
+            </div> */}
           </div>
 
           <div
@@ -66,8 +77,12 @@ const Header = () => {
                 </a>
               </li>
               {/* <Button>SignUp</Button> */}
-              <Button2 mr="group-hover:mr-[20px]" ml="ml-[3px]" class="lg:p-[6px_18px] p-[8px_20px] lg:text-xl text-[17.37px]">
-              SignUp
+              <Button2
+                mr="group-hover:mr-[20px]"
+                ml="ml-[3px]"
+                class="lg:p-[6px_18px] p-[8px_20px] lg:text-xl text-[17.37px] outline outline-[0.1px] outline-[#30C59B] focus-within:outline-[#000]"
+              >
+                SignUp
               </Button2>
             </div>
           </ul>
