@@ -1,9 +1,12 @@
 import React from "react";
 
 const Button2 = (props: any) => {
+
+  console.log(props.onClick);
+  
   return (
     <>
-      <button type="submit" className={`cta group ${props.class}`}>
+      <button type="submit" disabled={props.disable} onClick={props.onClick} className={`cta group ${props.class}`}>
         <span className="span">{props.children}</span>
         <span className={`second ${props.mr} ${props.ml}`}>
           <svg

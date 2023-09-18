@@ -18,6 +18,17 @@
       height: 50vh;
     }
 
+    .short-input {
+      width: fit-content !important;
+      padding: 11px 33px !important;
+      
+
+      @media screen and (max-width:768px) {
+        width: 90% !important;
+        overflow: hidden;
+      }
+    }
+
     /* url input */
     .input-container {
       /* width: 900px; */
@@ -234,7 +245,7 @@
       text-align: center;
     }
 
-    
+
 
     @media screen and (min-width: 600px) {
       .box {

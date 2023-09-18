@@ -29,7 +29,7 @@ const Banner = () => {
         </div>
         <div  className="h-fit w-fit flex justify-center items-center">
           <Image
-            src={"./images/illustration-working.svg"}
+            src={"/images/illustration-working.svg"}
             height={816}
             width={816}
             alt="logo"

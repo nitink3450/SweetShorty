@@ -3,11 +3,11 @@ import React from "react";
 
 const ContactUs = () => {
   const accessKey = process.env.NEXT_PUBLIC_YOUR_ACCESS_KEY;
- 
+
   return (
     <>
       {/* <div className="flex mt-[20px] lg:mt-[50px] justify-center items-center"> */}
-      <div className="w-full bg-white">
+      <div className="w-full">
         {/* <div className="container mx-auto"> */}
         <div className="max-w-3xl mx-auto mt-10 bg-white p-5 rounded-md ">
           <div className="text-center">

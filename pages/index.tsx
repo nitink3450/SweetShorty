@@ -22,13 +22,17 @@ export default function Home() {
 
       <main id="about" className="relative">
         <Header />
-        <section className="p-[10px] md:p-[24px]">
+        <section className="p-[10px] md:p-[24px] bg-white">
           <Banner />
           <div id="service" className="mt-[20px]"></div>
           <Url />
         </section>
-        <BoostBox />
-        <section id="contact" className="p-[10px]  md:p-[24px]">
+
+        <section className="pt-[30px] lg:pt-[50px] bg-white">
+          <BoostBox />
+        </section>
+
+        <section id="contact" className="p-[10px]  md:p-[24px] bg-white">
           <div className="lg:h-[100px] h-0"></div>
           <ContactUs />
         </section>

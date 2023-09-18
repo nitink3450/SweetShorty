@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React from "react";
+import React, { useEffect ,useState} from "react";
 import FooterLinkList from "../common/footerLinkList";
 // import FacebookLogo from "../../../public/icons/icon-facebook.svg";
 // import TwitterLogo from "../../../public/icons/icon-twitter.svg";
@@ -14,6 +14,22 @@ import {
   InstagramLogo,
 } from "../common/svgs";
 const Footer = () => {
+  useEffect(() => {
+    const footerElement = document.querySelector(".footer_fixed");
+    if (footerElement && window.innerWidth > 768) {
+      const footerHeight = footerElement.clientHeight;
+      document.body.style.paddingBottom = `${footerHeight}px`;
+    } else {
+      // Reset padding if conditions are not met
+      document.body.style.paddingBottom = "0";
+    }
+
+    // Clean up the effect when the component unmounts
+    return () => {
+      document.body.style.paddingBottom = "0";
+    };
+  },[]);
+
   const textLinks = [
     {
       title: "Features",
@@ -30,7 +46,7 @@ const Footer = () => {
   ];
   return (
     <>
-      <div className="bg-[#232127] text-white gap-[10px] 11x:gap-0 flex flex-col ">
+      <div className="bg-[#232127] text-white gap-[0px] 11x:gap-[10px] flex flex-col md:fixed md:left-0 md:right-0 md:bottom-0 footer_fixed -z-10">
         <div className="flex flex-col 11x:flex-row w-full 11x:justify-between 11x:p-[50px_150px] p-[30px_10px_0_10px] md:p-[30px]  gap-[20px] 11x:gap-0 items-center 11x:items-start ">
           <div className="cursor-pointer flex gap-[10px]  ">
             {/* <div className="h-[35px] w-[35px] flex justify-center items-center mr-[10px]">
