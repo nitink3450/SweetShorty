@@ -20,7 +20,7 @@ export default function Home() {
         <link rel="icon" href="/logo.svg" />
       </Head>
 
-      <main id="about" className="relative">
+      <main id="about" className="relative z-[2]">
         <Header />
         <section className="p-[10px] md:p-[24px] bg-white">
           <Banner />
@@ -36,8 +36,8 @@ export default function Home() {
           <div className="lg:h-[100px] h-0"></div>
           <ContactUs />
         </section>
-        <Footer />
       </main>
+      <Footer />
     </>
   );
 }

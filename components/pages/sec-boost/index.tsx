@@ -5,7 +5,7 @@ const BoostBox = () => {
   return (
     <>
       <div className="box lg:p-[5rem_4rem] p-[3rem_1.5rem] flex justify-center flex-col lg:gap-[60px] gap-[30px] items-center">
-        <div className="lg:text-[40px] md:text-[20px] text-center text-[25px] font-semibold text-white lg:tracking-[-3px] tracking-[-1px] leading-[0.9] ">
+        <div data-aos="fade-in" className="lg:text-[40px] md:text-[20px] text-center text-[25px] font-semibold text-white lg:tracking-[-3px] tracking-[-1px] leading-[0.9] ">
           Boost your
           <span className="6xx:text-[#7b1fa2] text-[#2acfcf] ml-[5px]">
             links

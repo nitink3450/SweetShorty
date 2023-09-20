@@ -11,10 +11,10 @@ const ContactUs = () => {
         {/* <div className="container mx-auto"> */}
         <div className="max-w-3xl mx-auto mt-10 bg-white p-5 rounded-md ">
           <div className="text-center">
-            <h1 className="lg:text-[60px] w-full md:text-[40px] text-center text-[25px] font-semibold text-[#232127] lg:tracking-[-3px] tracking-[-1px] leading-[0.9] mb-[10px]">
+            <h1 data-aos="fade-in" className="lg:text-[60px] w-full md:text-[40px] text-center text-[25px] font-semibold text-[#232127] lg:tracking-[-3px] tracking-[-1px] leading-[0.9] mb-[10px]">
               Contact <span className="text-[#7b1fa2]">Us</span>
             </h1>
-            <p className="text-gray-400 dark:text-gray-400">
+            <p data-aos="fade-in" className="text-gray-400 dark:text-gray-400">
               Fill up the form below to send us a message.
             </p>
           </div>
@@ -23,6 +23,7 @@ const ContactUs = () => {
               action="https://api.web3forms.com/submit"
               method="POST"
               id="form"
+              data-aos="fade-in"
               className="needs-validation"
               noValidate
             >

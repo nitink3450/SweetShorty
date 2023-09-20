@@ -18,15 +18,10 @@
       height: 50vh;
     }
 
+
     .short-input {
       width: fit-content !important;
       padding: 11px 33px !important;
-      
-
-      @media screen and (max-width:768px) {
-        width: 90% !important;
-        overflow: hidden;
-      }
     }
 
     /* url input */
@@ -58,7 +53,6 @@
       width: 100%;
       transition: .1s linear;
       border: 1px solid #30C59B;
-      ;
       padding: 11px 60px 11px 33px;
       text-decoration: none;
       font-family: 'Poppins', sans-serif;
@@ -70,6 +64,7 @@
       transition: 0.5s;
       /* border-radius: 50px; */
       /* outline: #30C59B; */
+
     }
 
     .input:hover {
@@ -253,5 +248,37 @@
         background-position: bottom;
       }
     }
+
+    @media screen and (min-width:768px) {
+
+      .footer_fixed {
+        position: fixed;
+        bottom: 0px;
+        left: 0px;
+        width: 100%;
+        z-index: 1;
+      }
+
+    }
+
+
+
+    @media screen and (max-width:768px) {
+      .short-input {
+        width: 90% !important;
+        overflow: hidden !important;
+        padding: 11px 13px !important;
+      }
+
+      .icon {
+        right: 10px;
+      }
+
+      .input {
+        padding: 11px 45px 11px 13px;
+      }
+
+    }
+
 
   }

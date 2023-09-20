@@ -47,7 +47,7 @@
                                 result.classList.remove("text-gray-500");
                                 result.classList.add("text-green-500");
                             } else {
-                                console.log(response);
+                                // console.log(response);
                                 result.innerHTML = json.message;
                                 result.classList.remove("text-gray-500");
                                 result.classList.add("text-red-500");
