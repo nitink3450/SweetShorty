@@ -104,22 +104,29 @@ const Footer = () => {
                   width="50px"
                 />
               </Link>
+              <Link href="#" passHref target="_blank" className="z-5">
+                <TwitterLogo
+                  className="text-[#7b1fa2] transition ease-in-out duration-500  hover:text-[#2BD0D0]"
+                  height="50px"
+                  width="50px"
+                />
+              </Link>
 
-              <TwitterLogo
-                className="text-[#7b1fa2] transition ease-in-out duration-500  hover:text-[#2BD0D0]"
-                height="50px"
-                width="50px"
-              />
-              <PinterestLogo
-                className="text-[#7b1fa2] transition ease-in-out duration-500  hover:text-[#2BD0D0]"
-                height="50px"
-                width="50px"
-              />
-              <InstagramLogo
-                className="text-[#7b1fa2] transition ease-in-out duration-500  hover:text-[#2BD0D0]"
-                height="50px"
-                width="50px"
-              />
+              <Link href="#" passHref target="_blank" className="z-5">
+                <PinterestLogo
+                  className="text-[#7b1fa2] transition ease-in-out duration-500  hover:text-[#2BD0D0]"
+                  height="50px"
+                  width="50px"
+                />
+              </Link>
+
+              <Link href="#" passHref target="_blank" className="z-5">
+                <InstagramLogo
+                  className="text-[#7b1fa2] transition ease-in-out duration-500  hover:text-[#2BD0D0]"
+                  height="50px"
+                  width="50px"
+                />
+              </Link>
             </div>
 
             {/* {iconLinks.map((item: any, index: any) => {

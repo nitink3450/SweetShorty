@@ -15,20 +15,26 @@ const Banner = () => {
             Shorten your <span className="text-[#7b1fa2]">loooooong</span> URLs
             like never before!
           </div>
-          <div data-aos="fade-in" className="lg:text-[20px] text-[14.72px] text-center lg:text-start font-normal text-[#9e9aa7]  leading-[1.5]">
+          <div
+            data-aos="fade-in"
+            className="lg:text-[20px] text-[14.72px] text-center lg:text-start font-normal text-[#9e9aa7]  leading-[1.5]"
+          >
             {`Build your brand's recognition and get detailed insights on how your links are performing`}
           </div>
           {/* <div className="lg:text-[20px] text-[14.72px] text-center lg:text-start font-normal text-[#9e9aa7]  leading-[1.5]">
             copy your long boring url. Paste it Below. Then 💥 You got it right!
           </div> */}
           {/* <Button>Get Started</Button> */}
-          <Button2
-            mr="group-hover:mr-[30px]"
-            ml="ml-[10px]"
-            class="lg:p-[11px_33px] p-[8px_20px] lg:text-[20px] text-[17.37px] outline outline-[0.1px] outline-[#30C59B] focus-within:outline-[#000]"
-          >
-            Get Started
-          </Button2>
+
+          <div data-aos="fade-in">
+            <Button2
+              mr="group-hover:mr-[30px]"
+              ml="ml-[10px]"
+              class="lg:p-[11px_33px] p-[8px_20px] lg:text-[20px] text-[17.37px] outline outline-[0.1px] outline-[#30C59B] focus-within:outline-[#000]"
+            >
+              Get Started
+            </Button2>
+          </div>
         </div>
         <div
           data-aos="fade-in"
