@@ -4,7 +4,7 @@ import { TiThMenu, TiPlus } from "react-icons/ti";
 import { CgMenuGridR, CgLayoutGrid } from "react-icons/cg";
 import Image from "next/image";
 import Button2 from "../common/button2";
-import { LogoSvg, SwenflySvg } from "../common/svgs";
+import { LogoSvg, SweetShortySvg, SwenflySvg } from "../common/svgs";
 const Header = () => {
   let Links = [
     { name: "Service", link: "#service" },
@@ -16,10 +16,10 @@ const Header = () => {
     <>
       {/* shadow-md  */}
       <div className="w-full sticky top-0 left-0 right-0 z-50">
-        <div className="9xx:flex items-center justify-between bg-white py-4 9xx:px-10 px-7">
+        <div className="9xx:flex items-center justify-between bg-white py-4 9xx:px-10 px-4">
           <div
             data-aos="fade-in"
-            className="cursor-pointer gap-[10px] flex items-center "
+            className="cursor-pointer gap-[10px] flex items-center"
           >
             {/* <div className="h-[35px] w-[35px] flex justify-center items-center mr-[10px]">
               <Image src={"/logo.svg"} height={35} width={35} alt="logo" />
@@ -29,10 +29,15 @@ const Header = () => {
               height="35px"
               width="35px"
             />
-            <SwenflySvg
+            {/* <SwenflySvg
               className="text-black transition ease-in-out duration-300 hover:text-[#7b1fa2]"
               height="35px"
               width="125px"
+            /> */}
+            <SweetShortySvg
+              className="text-black transition ease-in-out duration-300 hover:text-[#7b1fa2]"
+              height="35px"
+              width="200px"
             />
             {/* <div className="h-[35px] w-[125px] flex justify-center items-center">
               <Image
@@ -46,7 +51,7 @@ const Header = () => {
 
           <div
             onClick={() => setOpen(!open)}
-            className="text-3xl absolute right-8 top-[18px] cursor-pointer 9xx:hidden"
+            className="text-3xl absolute right-4 top-[18px] cursor-pointer 9xx:hidden"
           >
             {open ? <TiPlus className="rotate-[45deg]" /> : <TiThMenu />}
             {/* {open ? <CgLayoutGrid /> : <CgMenuGridR />} */}

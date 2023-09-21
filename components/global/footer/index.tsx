@@ -12,6 +12,7 @@ import {
   FacebookLogo,
   PinterestLogo,
   InstagramLogo,
+  SweetShortySvg,
 } from "../common/svgs";
 import Link from "next/link";
 const Footer = () => {
@@ -73,10 +74,17 @@ const Footer = () => {
               height="35px"
               width="35px"
             />
-            <SwenflySvg
+            {/*  */}
+            {/* <SwenflySvg
               className="text-white transition ease-in-out duration-300 hover:text-[#7b1fa2]"
               height="35px"
               width="125px"
+            /> */}
+
+            <SweetShortySvg
+              className="text-white transition ease-in-out duration-300 hover:text-[#7b1fa2]"
+              height="35px"
+              width="200px"
             />
           </div>
           <div className="flex flex-row gap-[25px] sm:gap-[60px] justify-between ">
@@ -85,7 +93,10 @@ const Footer = () => {
             })}
           </div>
           <div className="flex flex-row justify-center items-center ">
-            <div data-aos="fade-in" className="h-fit w-fit flex justify-center z-10 items-center">
+            <div
+              data-aos="fade-in"
+              className="h-fit w-fit flex justify-center z-10 items-center"
+            >
               <Link href="#" passHref target="_blank" className="z-5">
                 <FacebookLogo
                   className="text-[#7b1fa2] transition ease-in-out duration-500  hover:text-[#2BD0D0]"
@@ -130,7 +141,10 @@ const Footer = () => {
             })} */}
           </div>
         </div>
-        <div data-aos="fade-in" className="w-full p-[10px] bg-[black] text-center">
+        <div
+          data-aos="fade-in"
+          className="w-full p-[10px] bg-[black] text-center"
+        >
           © 2023 All Rights Reserved.
         </div>
       </div>
