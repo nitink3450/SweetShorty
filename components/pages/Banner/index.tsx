@@ -59,11 +59,18 @@ const Banner = () => {
             // src={"/images/illustration-working.svg"}
             // src={"/images/banner_1.svg"}
             // src={"/images/banner_2.svg"}
-            src={"/images/banner_1_animated.svg"}
+            src={"/images/banner_1_css.svg"}
             height={816}
             width={816}
             alt="logo"
           />
+          {/* <object
+            id="animated-svg"
+            type="image/svg+xml"
+            // height={816}
+            className="w-[100%] md:w-[816px]"
+            data="/images/banner_1_animated.svg"
+          ></object> */}
         </div>
       </div>
     </>
