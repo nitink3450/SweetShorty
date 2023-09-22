@@ -57,8 +57,9 @@ const Banner = () => {
         >
           <Image
             // src={"/images/illustration-working.svg"}
-            src={"/images/banner_1.svg"}
+            // src={"/images/banner_1.svg"}
             // src={"/images/banner_2.svg"}
+            src={"/images/banner_1_animated.svg"}
             height={816}
             width={816}
             alt="logo"

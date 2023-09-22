@@ -19,7 +19,6 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logo.svg" />
       </Head>
-
       <main id="about" className="relative z-[2]">
         <Header />
         <section className="p-[10px] md:p-[24px] bg-white">
