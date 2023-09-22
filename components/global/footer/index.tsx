@@ -70,7 +70,7 @@ const Footer = () => {
               />
             </div> */}
             <LogoSvg
-              className="text-[#7b1fa2] transition ease-in-out duration-500  hover:text-[#2BD0D0]"
+              className="text-[#7b1fa2] transition ease-in-out duration-500 hover:text-[#30C59B]"
               height="35px"
               width="35px"
             />
@@ -99,14 +99,14 @@ const Footer = () => {
             >
               <Link href="#" passHref target="_blank" className="z-5">
                 <FacebookLogo
-                  className="text-[#7b1fa2] transition ease-in-out duration-500  hover:text-[#2BD0D0]"
+                  className="text-[#7b1fa2] transition ease-in-out duration-500 hover:text-[#30C59B]"
                   height="50px"
                   width="50px"
                 />
               </Link>
               <Link href="#" passHref target="_blank" className="z-5">
                 <TwitterLogo
-                  className="text-[#7b1fa2] transition ease-in-out duration-500  hover:text-[#2BD0D0]"
+                  className="text-[#7b1fa2] transition ease-in-out duration-500 hover:text-[#30C59B]"
                   height="50px"
                   width="50px"
                 />
@@ -114,7 +114,7 @@ const Footer = () => {
 
               <Link href="#" passHref target="_blank" className="z-5">
                 <PinterestLogo
-                  className="text-[#7b1fa2] transition ease-in-out duration-500  hover:text-[#2BD0D0]"
+                  className="text-[#7b1fa2] transition ease-in-out duration-500 hover:text-[#30C59B]"
                   height="50px"
                   width="50px"
                 />
@@ -122,7 +122,7 @@ const Footer = () => {
 
               <Link href="#" passHref target="_blank" className="z-5">
                 <InstagramLogo
-                  className="text-[#7b1fa2] transition ease-in-out duration-500  hover:text-[#2BD0D0]"
+                  className="text-[#7b1fa2] transition ease-in-out duration-500 hover:text-[#30C59B]"
                   height="50px"
                   width="50px"
                 />

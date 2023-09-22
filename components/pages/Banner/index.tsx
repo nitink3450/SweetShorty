@@ -12,8 +12,23 @@ const Banner = () => {
             data-aos="fade-in"
             className="lg:text-[80px] md:text-[60px] lg:text-start text-center text-[37.6px] font-semibold text-[#232127] tracking-[-3px] leading-[0.9]"
           >
-            Shorten your <span className="text-[#7b1fa2]">loooooong</span> URLs
-            like never before!
+            <span className="reflect">Shorten your</span>
+            {/* <span className="text-[#7b1fa2] hover:text-[#30C59B]">
+              loooooong
+            </span>{" "} */}
+            <span className="drop-main bounce reflect text-[#7b1fa2] hover:text-[#30C59B] justify-center md:justify-start">
+              <div className="letter d">l</div>
+              <div className="letter o1">o</div>
+              <div className="letter o2">o</div>
+              <div className="letter o3">o</div>
+              <div className="letter o4">o</div>
+              <div className="letter o5">o</div>
+              <div className="letter o6">o</div>
+              <div className="letter n">n</div>
+              <div className="letter g">g</div>
+            </span>
+            <span className="reflect">URLs like never</span>
+            <span className="reflect">before!</span>
           </div>
           <div
             data-aos="fade-in"
@@ -41,7 +56,9 @@ const Banner = () => {
           className="h-fit w-fit flex justify-center items-center"
         >
           <Image
-            src={"/images/illustration-working.svg"}
+            // src={"/images/illustration-working.svg"}
+            src={"/images/banner_1.svg"}
+            // src={"/images/banner_2.svg"}
             height={816}
             width={816}
             alt="logo"

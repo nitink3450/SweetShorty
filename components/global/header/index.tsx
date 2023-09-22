@@ -25,7 +25,7 @@ const Header = () => {
               <Image src={"/logo.svg"} height={35} width={35} alt="logo" />
             </div> */}
             <LogoSvg
-              className="text-[#7b1fa2] transition ease-in-out duration-500  hover:text-[#2BD0D0]"
+              className="text-[#7b1fa2] transition ease-in-out duration-500 hover:text-[#30C59B]"
               height="35px"
               width="35px"
             />

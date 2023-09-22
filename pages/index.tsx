@@ -1,9 +1,9 @@
 import Footer from "@/components/global/footer";
 import Header from "@/components/global/header";
-import Banner from "@/components/pages/sec-banner";
-import BoostBox from "@/components/pages/sec-boost";
-import ContactUs from "@/components/pages/sec-contact";
-import Url from "@/components/pages/sec-url";
+import Banner from "@/components/pages/Banner";
+import BoostBox from "@/components/pages/Boost";
+import ContactUs from "@/components/pages/Contact";
+import Url from "@/components/pages/Url";
 import Head from "next/head";
 import Image from "next/image";
 

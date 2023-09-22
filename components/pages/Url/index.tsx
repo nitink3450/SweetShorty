@@ -130,11 +130,11 @@ const Url = () => {
         <div className="w-full flex justify-center items-center flex-col gap-[5px]">
           <div data-aos="fade-in" className="lg:text-[40px] md:text-[20px] lg:text-start text-center text-[25px] font-semibold text-[#232127] lg:tracking-[-3px] tracking-[-1px] leading-[0.9]">
             {`We’ve`}
-            <span className="text-[#7b1fa2] ml-[6px]">expanded!</span>
+            <span className="text-[#7b1fa2] transition ease-in-out duration-500 transition ease-in-out duration-500 hover:text-[#30C59B] ml-[6px]">expanded!</span>
           </div>
           <div data-aos="fade-in" className="lg:text-[40px] md:text-[20px] lg:text-start text-center text-[20px] font-semibold text-[#232127] lg:tracking-[-3px] tracking-[-1px] leading-[0.9]">
-            <span className="text-[#7b1fa2]">Shorten</span> URLs. Generate{" "}
-            <span className="text-[#7b1fa2]">QR</span> Codes.
+            <span className="text-[#7b1fa2] transition ease-in-out duration-500 hover:text-[#30C59B]">Shorten</span> URLs. Generate{" "}
+            <span className="text-[#7b1fa2] transition ease-in-out duration-500 hover:text-[#30C59B]">QR</span> Codes.
           </div>
           <div data-aos="fade-in" className="lg:text-[20px] text-[14.72px] text-center lg:text-start font-normal text-[#9e9aa7]  leading-[1.5] mt-[5px] lg:mt-[10px]">
             copy your long boring url. Paste it Below. Then 💥 You got it right!

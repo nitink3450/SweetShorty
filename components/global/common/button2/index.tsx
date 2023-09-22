@@ -8,6 +8,7 @@ const Button2 = (props: any) => {
         type="submit"
         disabled={props.disable}
         onClick={props.onClick}
+        style={{borderRadius:"10px"}}
         className={`cta group ${props.class}`}
         // data-aos="fade-in"
       >

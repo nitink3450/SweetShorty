@@ -10,7 +10,7 @@ const BoostBox = () => {
           className="lg:text-[40px] md:text-[20px] text-center text-[25px] font-semibold text-white lg:tracking-[-3px] tracking-[-1px] leading-[0.9] "
         >
           Boost your
-          <span className="6xx:text-[#7b1fa2] text-[#2acfcf] ml-[5px]">
+          <span className="6xx:text-[#7b1fa2]  text-[#2acfcf] ml-[5px]">
             links
           </span>{" "}
           today
