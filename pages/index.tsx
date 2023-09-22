@@ -11,10 +11,10 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Swenfly - Shorten and Track Your Links</title>
+        <title>SweetShorty - Shorten and Track Your Links</title>
         <meta
           name="description"
-          content="Swenfly is a free URL shortener that helps you shorten long links and track their performance. Improve your efficiency and share smarter links with Swenfly. Generate QR codes for your links too!"
+          content="SweetShorty is a free URL shortener that helps you shorten long links and track their performance. Improve your efficiency and share smarter links with SweetShorty. Generate QR codes for your links too!"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logo.svg" />
