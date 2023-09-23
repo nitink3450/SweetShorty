@@ -1,14 +1,11 @@
 import React, { useState } from "react";
-import Button from "../common/button1";
 import { TiThMenu, TiPlus } from "react-icons/ti";
-import { CgMenuGridR, CgLayoutGrid } from "react-icons/cg";
-import Image from "next/image";
 import Button2 from "../common/button2";
 import { LogoSvg, SweetShortySvg, SwenflySvg } from "../common/svgs";
 const Header = () => {
   let Links = [
-    { name: "Service", link: "#service" },
     { name: "About", link: "#about" },
+    { name: "Service", link: "#service" },
     { name: "Contact Us", link: "#contact" },
   ];
   let [open, setOpen] = useState(false);

@@ -140,7 +140,7 @@ const Url = () => {
             copy your long boring url. Paste it Below. Then 💥 You got it right!
           </div>
         </div>
-        <div data-aos="fade-in" className="w-full mt-[30px] flex justify-center items-center 2xl:w-[1240px] 2xl:h-[90px] gap-[30px] 2xl:gap-[50px] flex-col 2xl:flex-row">
+        <div data-aos="fade-in" className="w-full mt-[10px] flex justify-center items-center 2xl:w-[1240px] 2xl:h-[90px] gap-[30px] 2xl:gap-[50px] flex-col 2xl:flex-row">
           <div className="input-container w-[90%] hover:w-[98%] lg:w-[900px] lg:hover:w-[930px]">
             <input
               type="text"
@@ -181,7 +181,7 @@ const Url = () => {
           </Button2>
         </div>{" "}
         {shortUrl && (
-          <div data-aos="fade-in" className="w-full mt-[30px] 11px:mt-[0px] flex justify-center items-center 2xl:w-[1240px] 2xl:h-[90px] gap-[30px] 2xl:gap-[50px] flex-col 2xl:flex-row">
+          <div data-aos="fade-in" className="w-full mt-[10px] 11px:mt-[0px] flex justify-center items-center 2xl:w-[1240px] 2xl:h-[90px] gap-[30px] 2xl:gap-[50px] flex-col 2xl:flex-row">
             <div
               style={{ width: "fit-content" }}
               className=" input-container input short-input flex text-[17.37px] lg:text-[25px]"

@@ -5,7 +5,6 @@ import BoostBox from "@/components/pages/Boost";
 import ContactUs from "@/components/pages/Contact";
 import Url from "@/components/pages/Url";
 import Head from "next/head";
-import Image from "next/image";
 
 export default function Home() {
   return (
