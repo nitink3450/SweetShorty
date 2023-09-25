@@ -18,19 +18,19 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/logo.svg" />
       </Head>
-      <main id="about" className="relative z-[2]">
+      <main id="about" className="relative z-[2] bg-white">
         <Header />
-        <section className="p-[10px] md:p-[24px] bg-white">
+        <section className="p-[10px] md:p-[24px]">
           <Banner />
           <div id="service" className="mt-[20px]"></div>
           <Url />
         </section>
 
-        <section className="pt-[30px] lg:pt-[50px] bg-white">
+        <section className="pt-[30px] lg:pt-[50px]">
           <BoostBox />
         </section>
 
-        <section id="contact" className=" md:pb-[24px] bg-white">
+        <section id="contact" className=" md:pb-[24px] ">
           <div className="lg:h-[100px] h-0"></div>
           <ContactUs />
         </section>

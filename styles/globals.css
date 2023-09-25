@@ -70,7 +70,7 @@
 
     }
 
-    .input.pad{
+    .input.pad {
       padding: 10px 15px !important;
     }
 
@@ -105,6 +105,23 @@
         transform: translateY(calc(-50% - 5px)) scale(1.1);
       }
     }
+
+    .activeHead {
+      background: linear-gradient(180deg, rgba(10, 10, 10, 0.20) 0%, rgba(10, 10, 10, 0.04) 100%);
+      backdrop-filter: blur(20px);
+      padding: 16px !important;
+      transition: padding 0.5s ease;
+    }
+
+    @media screen and (max-width:768px) {
+      .activeHead {
+        background: white;
+        backdrop-filter: blur(0px);
+        padding: 16px !important;
+        transition: padding 0.5s ease;
+      }
+    }
+
 
     /* shorten btn */
     .cta {
@@ -270,6 +287,7 @@
         width: 100%;
         z-index: 1;
       }
+
 
     }
 

@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { TiThMenu, TiPlus } from "react-icons/ti";
 import Button2 from "../common/button2";
 import { LogoSvg, SweetShortySvg, SwenflySvg } from "../common/svgs";
+import { useMediaQuery } from "../common/UseMediaQuery/UseMediaQuery";
 const Header = () => {
   let Links = [
     { name: "About", link: "#about" },
@@ -9,15 +10,36 @@ const Header = () => {
     { name: "Contact Us", link: "#contact" },
   ];
   let [open, setOpen] = useState(false);
+  const isMobile = useMediaQuery("(max-width:768px)");
+
+  useEffect(() => {
+    let scrollpos = window.scrollY;
+
+    const header = document.querySelector(`.product_nav`);
+    const scrollChange = 48; //146
+
+    const add_class_on_scroll = () => header?.classList.add(`activeHead`);
+    const remove_class_on_scroll = () => header?.classList.remove(`activeHead`);
+
+    window.addEventListener("scroll", function () {
+      scrollpos = window.scrollY;
+
+      if (scrollpos >= scrollChange) {
+        add_class_on_scroll();
+      } else {
+        remove_class_on_scroll();
+      }
+    });
+  });
+
   return (
     <>
       {/* shadow-md  */}
-      <div className="w-full sticky top-0 left-0 right-0 z-50">
-        <div className="9xx:flex items-center justify-between bg-white py-4 9xx:px-10 px-4">
-          <div
-            data-aos="fade-in"
-            className="cursor-pointer gap-[10px] flex items-center"
-          >
+      <div className="w-full sticky top-0 left-0 right-0 z-50 ">
+        <div
+          className={`9xx:flex items-center justify-between product_nav bg-white 9xx:px-10 px-4 pb-4 pt-4 9xx:pt-10 `}
+        >
+          <div className="cursor-pointer gap-[10px] flex items-center z-50">
             {/* <div className="h-[35px] w-[35px] flex justify-center items-center mr-[10px]">
               <Image src={"/logo.svg"} height={35} width={35} alt="logo" />
             </div> */}
@@ -48,26 +70,22 @@ const Header = () => {
 
           <div
             onClick={() => setOpen(!open)}
-            className="text-3xl absolute right-4 top-[18px] cursor-pointer 9xx:hidden"
+            className="text-3xl absolute right-4 top-[18px] cursor-pointer 9xx:hidden "
           >
             {open ? <TiPlus className="rotate-[45deg]" /> : <TiThMenu />}
             {/* {open ? <CgLayoutGrid /> : <CgMenuGridR />} */}
           </div>
 
           <ul
-            className={`9xx:flex 9xx:items-center 9xx:pb-0 pb-12 absolute 9xx:static bg-white 9xx:z-auto z-[-1] left-0 w-full 9xx:w-auto 9xx:pl-0 pl-9 transition-all duration-500 ease-in ${
+            className={`9xx:flex 9xx:items-center 9xx:pb-0 pb-12 absolute 9xx:static bg-transparent 9xx:z-auto z-[-1] left-0 w-full 9xx:w-auto 9xx:pl-0 pl-9 transition-all duration-500 ease-in bg-white md:bg-transparent ${
               open ? "top-20 " : "top-[-490px]"
             }`}
           >
             {Links.map((link) => (
-              <li
-                data-aos="fade-in"
-                key={link.name}
-                className="9xx:ml-8 text-xl 9xx:my-0 my-7"
-              >
+              <li key={link.name} className="9xx:ml-8 text-xl 9xx:my-0 my-7">
                 <a
                   href={link.link}
-                  className="text-gray-800 hover:text-gray-400 duration-500"
+                  className="text-gray-800 hover:text-[#30C59B] duration-500"
                 >
                   {link.name}
                 </a>
@@ -77,10 +95,10 @@ const Header = () => {
               className="9xx:ml-[100px] flex
             9xx:flex-row flex-col 9xx:justify-center items-start 9xx:items-center 9xx:gap-0 gap-10"
             >
-              <li data-aos="fade-in" className="9xx:ml-8 text-xl 9xx:my-0">
+              <li className="9xx:ml-8 text-xl 9xx:my-0">
                 <a
                   href="#"
-                  className="text-gray-800 hover:text-gray-400 9xx:mr-8 duration-500"
+                  className="text-gray-800 hover:text-[#30C59B] 9xx:mr-8 duration-500"
                 >
                   Login
                 </a>
