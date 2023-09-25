@@ -11,7 +11,7 @@ export default function App({ Component, pageProps }: AppProps) {
       easing: "ease-in-out",
       once: false,
       offset: 0,
-      startEvent: "load",
+      // startEvent: "load",
     });
   }, []);
   return <Component {...pageProps} />;

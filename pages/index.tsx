@@ -30,7 +30,7 @@ export default function Home() {
           <BoostBox />
         </section>
 
-        <section id="contact" className="p-[10px]  md:p-[24px] bg-white">
+        <section id="contact" className=" md:pb-[24px] bg-white">
           <div className="lg:h-[100px] h-0"></div>
           <ContactUs />
         </section>

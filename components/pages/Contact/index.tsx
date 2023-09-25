@@ -9,8 +9,8 @@ const ContactUs = () => {
       {/* <div className="flex mt-[20px] lg:mt-[50px] justify-center items-center"> */}
       <div className="w-full">
         {/* <div className="container mx-auto"> */}
-        <div className="max-w-3xl mx-auto mt-10 bg-white p-5 rounded-md ">
-          <div className="text-center">
+        <div className="max-w-3xl mx-auto mt-10 bg-white rounded-md ">
+          <div className="text-center px-[24px]">
             <h1
               data-aos="fade-in"
               className="lg:text-[60px] w-full md:text-[40px] text-center text-[25px] font-semibold text-[#232127] lg:tracking-[-3px] tracking-[-1px] leading-[0.9] mb-[10px]"
@@ -50,7 +50,7 @@ const ContactUs = () => {
                 <div className="w-full mb-3 md:mb-0 md:w-full">
                   <label
                     htmlFor="fname"
-                    className="block mb-2 text-sm text-gray-600 dark:text-gray-400"
+                    className="block mb-2 italic lg:text-[20px] text-[14.72px] text-gray-600 dark:text-gray-400"
                   >
                     First Name
                   </label>
@@ -58,18 +58,18 @@ const ContactUs = () => {
                     type="text"
                     name="name"
                     id="first_name"
-                    placeholder="John"
+                    placeholder="Enter Your Name"
                     required
-                    className="w-full px-3 py-2 placeholder-gray-300 border-2 border-gray-200 rounded-md focus:outline-none focus:ring focus:ring-[#30C59B] focus:ring-opacity-70 focus:border-[#7b1fa2]"
+                    className="w-full input-container input pad px-3 py-2 placeholder-gray-300 border-2 border-gray-200 rounded-md"
                   />
-                  <div className="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
+                  <div className="empty-feedback invalid-feedback text-red-400 text-sm mt-3">
                     Please provide your first name.
                   </div>
                 </div>
                 <div className="w-full md:w-full">
                   <label
                     htmlFor="lname"
-                    className="block mb-2 text-sm text-gray-600 dark:text-gray-400"
+                    className="block mb-2 italic lg:text-[20px] text-[14.72px] text-gray-600 dark:text-gray-400"
                   >
                     Last Name
                   </label>
@@ -77,11 +77,11 @@ const ContactUs = () => {
                     type="text"
                     name="last_name"
                     id="lname"
-                    placeholder="Doe"
+                    placeholder="Enter Your Last Name"
                     required
-                    className="w-full px-3 py-2 placeholder-gray-300 border-2 border-gray-200 rounded-md focus:outline-none focus:ring focus:ring-[#30C59B] focus:ring-opacity-70 focus:border-[#7b1fa2]"
+                    className="w-full input-container input pad px-3 py-2 placeholder-gray-300 border-2 border-gray-200 rounded-md"
                   />
-                  <div className="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
+                  <div className="empty-feedback invalid-feedback text-red-400 text-sm mt-3">
                     Please provide your last name.
                   </div>
                 </div>
@@ -91,7 +91,7 @@ const ContactUs = () => {
                 <div className="w-full mb-3 md:mb-0 md:w-full">
                   <label
                     htmlFor="email"
-                    className="block mb-2 text-sm text-gray-600 dark:text-gray-400"
+                    className="block mb-2 italic lg:text-[20px] text-[14.72px] text-gray-600 dark:text-gray-400"
                   >
                     Email Address
                   </label>
@@ -99,14 +99,14 @@ const ContactUs = () => {
                     type="email"
                     name="email"
                     id="email"
-                    placeholder="you@company.com"
+                    placeholder="Enter Your Email Address"
                     required
-                    className="w-full px-3 py-2 placeholder-gray-300 border-2 border-gray-200 rounded-md focus:outline-none focus:ring focus:ring-[#30C59B] focus:ring-opacity-70 focus:border-[#7b1fa2]"
+                    className="w-full px-3 py-2 placeholder-gray-300 border-2 border-gray-200 rounded-md input-container input pad"
                   />
-                  <div className="empty-feedback text-red-400 text-sm mt-1">
+                  <div className="empty-feedback text-red-400 text-sm mt-3">
                     Please provide your email address.
                   </div>
-                  <div className="invalid-feedback text-red-400 text-sm mt-1">
+                  <div className="invalid-feedback text-red-400 text-sm mt-3">
                     Please provide a valid email address.
                   </div>
                 </div>
@@ -114,7 +114,7 @@ const ContactUs = () => {
                 <div className="w-full md:w-full">
                   <label
                     htmlFor="phone"
-                    className="block text-sm mb-2 text-gray-600 dark:text-gray-400"
+                    className="block italic lg:text-[20px] text-[14.72px] mb-2 text-gray-600 dark:text-gray-400"
                   >
                     Phone Number
                   </label>
@@ -122,12 +122,12 @@ const ContactUs = () => {
                     type="text"
                     name="phone"
                     id="phone"
-                    placeholder="+91 9876543210 "
+                    placeholder="Enter Your Phone Number"
                     required
-                    className="w-full px-3 py-2 placeholder-gray-300 border-2 border-gray-200 rounded-md focus:outline-none focus:ring focus:ring-[#30C59B] focus:ring-opacity-70 focus:border-[#7b1fa2]"
+                    className="w-full px-3 py-2 placeholder-gray-300 border-2 border-gray-200 rounded-md input-container input pad"
                   />
 
-                  <div className="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
+                  <div className="empty-feedback invalid-feedback text-red-400 text-sm mt-3">
                     Please provide your phone number.
                   </div>
                 </div>
@@ -135,7 +135,7 @@ const ContactUs = () => {
               <div className="mb-6">
                 <label
                   htmlFor="message"
-                  className="block mb-2 text-sm text-gray-600 dark:text-gray-400"
+                  className="block mb-2 italic lg:text-[20px] text-[14.72px] text-gray-600 dark:text-gray-400"
                 >
                   Your Message
                 </label>
@@ -145,10 +145,10 @@ const ContactUs = () => {
                   name="message"
                   id="message"
                   placeholder="Your Message"
-                  className="w-full px-3 py-2 placeholder-gray-300 border-2 border-gray-200 rounded-md focus:outline-none focus:ring focus:ring-[#30C59B] focus:ring-opacity-70 focus:border-[#7b1fa2]"
+                  className="w-full px-3 py-2 placeholder-gray-300 border-2 border-gray-200 rounded-md input-container input pad"
                   required
                 ></textarea>
-                <div className="empty-feedback invalid-feedback text-red-400 text-sm mt-1">
+                <div className="empty-feedback invalid-feedback text-red-400 text-sm mt-3">
                   Please enter your message.
                 </div>
               </div>
