@@ -2,6 +2,7 @@ import Button from "@/components/global/common/button1";
 import Button2 from "@/components/global/common/button2";
 import Image from "next/image";
 import React from "react";
+import Tilt from "react-parallax-tilt";
 
 const Banner = () => {
   return (
@@ -55,15 +56,17 @@ const Banner = () => {
           data-aos="fade-in"
           className="h-fit w-fit flex justify-center items-center"
         >
-          <Image
-            // src={"/images/illustration-working.svg"}
-            // src={"/images/banner_1.svg"}
-            // src={"/images/banner_2.svg"}
-            src={"/images/banner_1_css.svg"}
-            height={816}
-            width={816}
-            alt="logo"
-          />
+          <Tilt className="track-on-window" trackOnWindow={true}>
+            <Image
+              // src={"/images/illustration-working.svg"}
+              // src={"/images/banner_1.svg"}
+              // src={"/images/banner_2.svg"}
+              src={"/images/banner_1_css.svg"}
+              height={816}
+              width={816}
+              alt="logo"
+            />
+          </Tilt>
           {/* <object
             id="animated-svg"
             type="image/svg+xml"

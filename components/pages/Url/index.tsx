@@ -239,7 +239,7 @@ const Url = () => {
                 onClick={() => {
                   setShowQRCode(!showQRCode);
                 }}
-                class="lg:p-[11px_33px] w-[90%] p-[8px_20px] lg:text-[25px] text-[17.37px] outline outline-[0.1px] outline-[#30C59B] focus-within:outline-[#000]"
+                class="lg:p-[11px_33px] w-[90%] p-[8px_20px] lg:text-[25px] text-[17.37px] outline outline-[0.1px] outline-[rgb(48,197,155)] focus-within:outline-[#000]"
               >
                 QR Code
               </Button2>
