@@ -7,11 +7,11 @@ import Tilt from "react-parallax-tilt";
 const Banner = () => {
   return (
     <>
-      <div className="flex lg:flex-row flex-col-reverse justify-between items-center w-[100%]  lg:gap-[10px] gap-[50px] ">
+      <div className="flex lg:flex-row flex-col-reverse justify-between items-center w-[100%] lg:gap-[10px] gap-[50px] ">
         <div className="flex flex-col w-[100%] justify-center items-center lg:items-start lg:w-[44%] p-0 md:px-[38px] gap-[30px] ">
           <div
             data-aos="fade-in"
-            className="lg:text-[80px] md:text-[60px] lg:text-start text-center text-[37.6px] font-semibold text-[#232127] tracking-[-3px] leading-[0.9]"
+            className="lg:text-[80px] md:text-[60px] lg:text-start text-center text-[37.6px] font-semibold dark:text-white text-[#232127] tracking-[-3px] leading-[0.9]"
           >
             <span className="reflect">Shorten your</span>
             {/* <span className="text-[#7b1fa2] hover:text-[#30C59B]">
@@ -46,7 +46,7 @@ const Banner = () => {
             <Button2
               mr="group-hover:mr-[30px]"
               ml="ml-[10px]"
-              class="lg:p-[11px_33px] p-[8px_20px] lg:text-[20px] text-[17.37px] outline outline-[0.1px] outline-[#30C59B] focus-within:outline-[#000]"
+              class="lg:p-[11px_33px] p-[8px_20px] lg:text-[20px] text-[17.37px] "
             >
               Get Started
             </Button2>
@@ -54,7 +54,7 @@ const Banner = () => {
         </div>
         <div
           data-aos="fade-in"
-          className="h-fit w-fit flex justify-center items-center"
+          className="h-fit w-fit flex justify-center items-center overflow-hidden"
         >
           <Tilt className="track-on-window" trackOnWindow={true}>
             <Image

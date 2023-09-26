@@ -7,13 +7,13 @@ const ContactUs = () => {
   return (
     <>
       {/* <div className="flex mt-[20px] lg:mt-[50px] justify-center items-center"> */}
-      <div className="w-full">
+      <div className="w-full pb-[2px]">
         {/* <div className="container mx-auto"> */}
-        <div className="max-w-3xl mx-auto mt-10 bg-white rounded-md ">
+        <div className="max-w-3xl mx-auto mt-10 rounded-md ">
           <div className="text-center px-[24px]">
             <h1
               data-aos="fade-in"
-              className="lg:text-[60px] w-full md:text-[40px] text-center text-[25px] font-semibold text-[#232127] lg:tracking-[-3px] tracking-[-1px] leading-[0.9] mb-[10px]"
+              className="lg:text-[60px] w-full md:text-[40px] text-center text-[25px] font-semibold dark:text-white text-[#232127] lg:tracking-[-3px] tracking-[-1px] leading-[0.9] mb-[10px]"
             >
               Contact{" "}
               <span className="text-[#7b1fa2] transition ease-in-out duration-500 hover:text-[#30C59B]">

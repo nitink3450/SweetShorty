@@ -128,15 +128,15 @@ const Url = () => {
     <>
       <div className=" w-full flex justify-center items-center flex-col mt-[50px] lg:mt-[100px] gap-[5px]">
         <div className="w-full flex justify-center items-center flex-col gap-[5px]">
-          <div data-aos="fade-in" className="lg:text-[40px] md:text-[20px] lg:text-start text-center text-[25px] font-semibold text-[#232127] lg:tracking-[-3px] tracking-[-1px] leading-[0.9]">
+          <div data-aos="fade-in" className="lg:text-[40px] md:text-[20px] lg:text-start text-center text-[25px] font-semibold dark:text-[#F7F7F7] text-[#232127] lg:tracking-[-3px] tracking-[-1px] leading-[0.9]">
             {`We’ve`}
-            <span className="text-[#7b1fa2] transition ease-in-out duration-500 transition ease-in-out duration-500 hover:text-[#30C59B] ml-[6px]">expanded!</span>
+            <span className="text-[#7b1fa2]  ease-in-out duration-500 transition  hover:text-[#30C59B] ml-[6px]">expanded!</span>
           </div>
-          <div data-aos="fade-in" className="lg:text-[40px] md:text-[20px] lg:text-start text-center text-[20px] font-semibold text-[#232127] lg:tracking-[-3px] tracking-[-1px] leading-[0.9]">
+          <div data-aos="fade-in" className="lg:text-[40px] md:text-[20px] lg:text-start text-center text-[20px] font-semibold dark:text-[#F7F7F7] text-[#232127] lg:tracking-[-3px] tracking-[-1px] leading-[0.9]">
             <span className="text-[#7b1fa2] transition ease-in-out duration-500 hover:text-[#30C59B]">Shorten</span> URLs. Generate{" "}
             <span className="text-[#7b1fa2] transition ease-in-out duration-500 hover:text-[#30C59B]">QR</span> Codes.
           </div>
-          <div data-aos="fade-in" className="lg:text-[20px] text-[14.72px] text-center lg:text-start font-normal text-[#9e9aa7]  leading-[1.5] mt-[5px] lg:mt-[10px]">
+          <div data-aos="fade-in" className="lg:text-[20px] text-[14.72px] text-center lg:text-start font-normal  text-[#9e9aa7]  leading-[1.5] mt-[5px] lg:mt-[10px]">
             copy your long boring url. Paste it Below. Then 💥 You got it right!
           </div>
         </div>
@@ -145,7 +145,7 @@ const Url = () => {
             <input
               type="text"
               name="text"
-              className="input hidden md:flex text-[17.37px] lg:text-[25px] hover:w-[98%] lg:hover:w-[930px]"
+              className="input dark:dark-in light-in hidden md:flex text-[17.37px] lg:text-[25px] hover:w-[98%] lg:hover:w-[930px]"
               placeholder="Paste long url and shorten it..."
               value={longUrl}
               onChange={(e) => setLongUrl(e.target.value)}
@@ -184,7 +184,7 @@ const Url = () => {
           <div data-aos="fade-in" className="w-full mt-[10px] 11px:mt-[0px] flex justify-center items-center 2xl:w-[1240px] 2xl:h-[90px] gap-[30px] 2xl:gap-[50px] flex-col 2xl:flex-row">
             <div
               style={{ width: "fit-content" }}
-              className=" input-container input short-input flex text-[17.37px] lg:text-[25px]"
+              className=" input-container input dark:dark-in light-in short-input flex text-[17.37px] lg:text-[25px]"
             >
               {/* <input
                 type="text"

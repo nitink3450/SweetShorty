@@ -10,6 +10,7 @@ const Header = () => {
     { name: "Contact Us", link: "#contact" },
   ];
   let [open, setOpen] = useState(false);
+
   const isMobile = useMediaQuery("(max-width:768px)");
 
   useEffect(() => {
@@ -32,14 +33,23 @@ const Header = () => {
     });
   });
 
+  const handleMenu = () => {
+    setOpen(!open);
+    if (!open) {
+      document.documentElement.style.overflow = "hidden";
+    } else {
+      document.documentElement.style.overflow = "scroll";
+    }
+  };
+
   return (
     <>
       {/* shadow-md  */}
-      <div className="w-full sticky top-0 left-0 right-0 z-50 ">
+      <div className="w-full sticky top-0 left-0 right-0 z-50 md:overflow-hidden transition-all ease-in duration-100">
         <div
-          className={`9xx:flex items-center justify-between product_nav bg-white 9xx:px-10 px-4 pb-4 pt-4 9xx:pt-10 `}
+          className={`9xx:flex items-center justify-between product_nav dark:bg-[#191919] bg-white 9xx:px-10 px-4 pb-4 pt-4 9xx:pt-10 z-50 relative transition-all ease-in duration-500`}
         >
-          <div className="cursor-pointer gap-[10px] flex items-center z-50">
+          <div className="cursor-pointer gap-[10px] flex items-center">
             {/* <div className="h-[35px] w-[35px] flex justify-center items-center mr-[10px]">
               <Image src={"/logo.svg"} height={35} width={35} alt="logo" />
             </div> */}
@@ -54,7 +64,7 @@ const Header = () => {
               width="125px"
             /> */}
             <SweetShortySvg
-              className="text-black transition ease-in-out duration-300 hover:text-[#7b1fa2]"
+              className="text-black transition-all duration-300 ease-in dark:text-[#7b1fa2] dark:hover:text-[#30C59B] hover:text-[#7b1fa2]"
               height="35px"
               width="200px"
             />
@@ -69,7 +79,7 @@ const Header = () => {
           </div>
 
           <div
-            onClick={() => setOpen(!open)}
+            onClick={handleMenu}
             className="text-3xl absolute right-4 top-[18px] cursor-pointer 9xx:hidden "
           >
             {open ? <TiPlus className="rotate-[45deg]" /> : <TiThMenu />}
@@ -77,7 +87,7 @@ const Header = () => {
           </div>
 
           <ul
-            className={`9xx:flex 9xx:items-center 9xx:pb-0 pb-12 absolute 9xx:static bg-transparent 9xx:z-auto z-[-1] left-0 w-full 9xx:w-auto 9xx:pl-0 pl-9 transition-all duration-500 ease-in bg-white md:bg-transparent ${
+            className={`9xx:flex 9xx:items-center 9xx:pb-0 pb-12 absolute 9xx:static left-0 w-full 9xx:w-auto 9xx:pl-0 pl-9 transition-all duration-500 ease-in -z-10 dark:bg-[#191919] bg-white ${
               open ? "top-20 " : "top-[-490px]"
             }`}
           >
@@ -85,7 +95,7 @@ const Header = () => {
               <li key={link.name} className="9xx:ml-8 text-xl 9xx:my-0 my-7">
                 <a
                   href={link.link}
-                  className="text-gray-800 hover:text-[#30C59B] duration-500"
+                  className="text-gray-800 dark:text-[#7b1fa2] dark:hover:text-[#30C59B] hover:text-[#30C59B] duration-500"
                 >
                   {link.name}
                 </a>
@@ -98,7 +108,7 @@ const Header = () => {
               <li className="9xx:ml-8 text-xl 9xx:my-0">
                 <a
                   href="#"
-                  className="text-gray-800 hover:text-[#30C59B] 9xx:mr-8 duration-500"
+                  className="text-gray-800 dark:text-[#7b1fa2] dark:hover:text-[#30C59B] hover:text-[#30C59B] 9xx:mr-8 duration-500"
                 >
                   Login
                 </a>

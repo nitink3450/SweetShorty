@@ -9,7 +9,7 @@ const Button2 = (props: any) => {
         disabled={props.disable}
         onClick={props.onClick}
         style={{borderRadius:"10px"}}
-        className={`cta group ${props.class}`}
+        className={`cta group dark:dark-cta light-cta outline outline-[0.1px] dark:outline-white outline-[#30C59B] dark:focus-within:outline-[#30C59B] focus-within:outline-[#000] ${props.class}`}
         // data-aos="fade-in"
       >
         <span className="span">{props.children}</span>

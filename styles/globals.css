@@ -51,10 +51,11 @@
       color: #FBC638;
     }
 
+
     .input {
       width: 100%;
       transition: .1s linear;
-      border: 1px solid #30C59B;
+      /* border: 1px solid #30C59B; */
       padding: 11px 60px 11px 33px;
       text-decoration: none;
       font-family: 'Poppins', sans-serif;
@@ -62,12 +63,28 @@
       letter-spacing: 2px;
       background-color: #7b1fa2;
       color: white;
-      box-shadow: 6px 6px 0 black;
+      /* box-shadow: 6px 6px 0 black; */
       transition: 0.5s;
       border-radius: 10px;
-      /* border-radius: 50px; */
-      /* outline: #30C59B; */
+    }
 
+    .input.dark-in{
+      box-shadow: 6px 6px 0 #30C59B;
+      border: 1px solid #FFF;
+    }
+    .input.light-in{
+      box-shadow: 6px 6px 0 black;
+      border: 1px solid #30C59B;
+    }
+
+    .input.dark-in:hover {
+      transition: 0.5s;
+      box-shadow: 10px 10px 0 #FBC638;
+    }
+
+    .input.light-in:hover {
+      transition: 0.5s;
+      box-shadow: 10px 10px 0 #FBC638;
     }
 
     .input.pad {
@@ -79,7 +96,12 @@
       box-shadow: 10px 10px 0 #FBC638;
     }
 
-    .input:focus {
+    .dark-in:focus {
+      outline: none;
+      border: 0.5px solid #30C59B;
+      box-shadow: 10px 10px 0 #FFF;
+    }
+    .light-in:focus {
       outline: none;
       border: 0.5px solid black;
       box-shadow: 10px 10px 0 #30C59B;
@@ -107,10 +129,22 @@
     }
 
     .activeHead {
-      background: linear-gradient(180deg, rgba(10, 10, 10, 0.20) 0%, rgba(10, 10, 10, 0.04) 100%);
-      backdrop-filter: blur(20px);
+      /* background: linear-gradient(180deg, rgba(10, 10, 10, 0.20) 0%, rgba(10, 10, 10, 0.04) 100%);
+      backdrop-filter: blur(20px); */
+      /* border-bottom: 1px solid #E8E8E8; */
       padding: 16px !important;
-      transition: padding 0.5s ease;
+      transition: all 0.5s ease-in;
+    }
+
+    .dark-btn {
+      /* background: linear-gradient(180deg, rgba(10, 10, 10, 0.20) 0%, rgba(10, 10, 10, 0.04) 100%);
+      backdrop-filter: blur(20px); */
+      /* background: #ffffff7d;
+      background: #0000007d; */
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(6.7px);
+      -webkit-backdrop-filter: blur(6.7px);
+      z-index: 10;
     }
 
     @media screen and (max-width:768px) {
@@ -133,15 +167,34 @@
       font-family: 'Poppins', sans-serif;
       /* font-size: 25px; */
       color: white;
-      background: #6225E6;
+      /* background: #6225E6; */
       background: #7b1fa2;
       transition: 1s;
-      box-shadow: 6px 6px 0 black;
+      /* box-shadow: 6px 6px 0 black; */
       transform: skewX(-15deg);
       border: none;
       font-style: italic;
       /* border-radius: 50px; */
     }
+
+    .cta.dark-cta {
+      box-shadow: 6px 6px 0 #30C59B;
+    }
+
+    .cta.dark-cta:hover {
+      transition: 0.5s;
+      box-shadow: 10px 10px 0 #FBC638;
+    }
+
+    .cta.light-cta {
+      box-shadow: 6px 6px 0 black;
+    }
+
+    .cta.light-cta:hover {
+      transition: 0.5s;
+      box-shadow: 10px 10px 0 #FBC638;
+    }
+
 
     /* .cta:focus {
       outline: none;
@@ -153,7 +206,10 @@
       box-shadow: 10px 10px 0 #FBC638;
     }
 
-    .cta:focus-within {
+    .cta.dark-cta:focus-within {
+      box-shadow: 10px 10px 0 #FFF;
+    }
+    .cta.light-cta:focus-within {
       box-shadow: 10px 10px 0 #30C59B;
     }
 
@@ -323,6 +379,8 @@
       /* -webkit-box-reflect: below -20px linear-gradient(transparent, #211e1e2e); */
     }
 
+    
+
 
 
     .l {
@@ -475,7 +533,6 @@
       animation-delay: 1s;
     }
 
-
-
+    
 
   }
