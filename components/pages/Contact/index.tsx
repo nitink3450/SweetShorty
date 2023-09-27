@@ -60,7 +60,7 @@ const ContactUs = () => {
                     id="first_name"
                     placeholder="Enter Your Name"
                     required
-                    className="w-full input-container input pad px-3 py-2 placeholder-gray-300 border-2 border-gray-200 rounded-md"
+                    className="w-full input-container input dark:dark-in light-in pad px-3 py-2 placeholder-gray-300 border-2 border-gray-200 rounded-md"
                   />
                   <div className="empty-feedback invalid-feedback text-red-400 text-sm mt-3">
                     Please provide your first name.
@@ -78,8 +78,8 @@ const ContactUs = () => {
                     name="last_name"
                     id="lname"
                     placeholder="Enter Your Last Name"
-                    required
-                    className="w-full input-container input pad px-3 py-2 placeholder-gray-300 border-2 border-gray-200 rounded-md"
+                    
+                    className="w-full input-container input dark:dark-in light-in pad px-3 py-2 placeholder-gray-300 border-2 border-gray-200 rounded-md"
                   />
                   <div className="empty-feedback invalid-feedback text-red-400 text-sm mt-3">
                     Please provide your last name.
@@ -101,7 +101,7 @@ const ContactUs = () => {
                     id="email"
                     placeholder="Enter Your Email Address"
                     required
-                    className="w-full px-3 py-2 placeholder-gray-300 border-2 border-gray-200 rounded-md input-container input pad"
+                    className="w-full px-3 py-2 placeholder-gray-300 border-2 border-gray-200 rounded-md input-container input dark:dark-in light-in pad"
                   />
                   <div className="empty-feedback text-red-400 text-sm mt-3">
                     Please provide your email address.
@@ -123,8 +123,7 @@ const ContactUs = () => {
                     name="phone"
                     id="phone"
                     placeholder="Enter Your Phone Number"
-                    required
-                    className="w-full px-3 py-2 placeholder-gray-300 border-2 border-gray-200 rounded-md input-container input pad"
+                    className="w-full px-3 py-2 placeholder-gray-300 border-2 border-gray-200 rounded-md input-container input dark:dark-in light-in pad"
                   />
 
                   <div className="empty-feedback invalid-feedback text-red-400 text-sm mt-3">
@@ -145,7 +144,7 @@ const ContactUs = () => {
                   name="message"
                   id="message"
                   placeholder="Your Message"
-                  className="w-full px-3 py-2 placeholder-gray-300 border-2 border-gray-200 rounded-md input-container input pad"
+                  className="w-full px-3 py-2 placeholder-gray-300 border-2 border-gray-200 rounded-md input-container input dark:dark-in light-in pad"
                   required
                 ></textarea>
                 <div className="empty-feedback invalid-feedback text-red-400 text-sm mt-3">

@@ -64,7 +64,7 @@ const Header = () => {
               width="125px"
             /> */}
             <SweetShortySvg
-              className="text-black transition-all duration-300 ease-in dark:text-[#7b1fa2] dark:hover:text-[#30C59B] hover:text-[#7b1fa2]"
+              className="text-black dark:text-[#7b1fa2] dark:hover:text-[#30C59B] hover:text-[#30C59B] duration-300"
               height="35px"
               width="200px"
             />

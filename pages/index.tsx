@@ -7,8 +7,11 @@ import ThemeToggle from "@/components/pages/DarkMode";
 import Url from "@/components/pages/Url";
 import Head from "next/head";
 import AnimatedCursor from "react-animated-cursor";
+import React,{useState} from 'react';
 
 export default function Home() {
+  const [isDarkModeOn, setIsDarkModeOn] = useState();
+
   return (
     <>
       <Head>
@@ -48,11 +51,11 @@ export default function Home() {
         className="relative z-[2]  dark:bg-[#191919] bg-white transition-all ease-in duration-500"
       >
         <Header />
-        <ThemeToggle />
+        <ThemeToggle isDarkModeOn={isDarkModeOn} setIsDarkModeOn={setIsDarkModeOn} />
         <section className="p-[10px] md:p-[24px] overflow-hidden">
           <Banner />
           <div id="service" className="mt-[20px]"></div>
-          <Url />
+          <Url isDarkModeOn={isDarkModeOn} />
         </section>
 
         <section className="pt-[30px] lg:pt-[50px]">
