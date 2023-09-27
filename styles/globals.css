@@ -18,6 +18,81 @@
       height: 50vh;
     }
 
+    /* dark-btn toggle */
+    .toggle {
+      display: grid;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5), 0 3px 6px rgba(0, 0, 0, 0.5) !important;
+    }
+
+    .toggle input {
+      display: none;
+    }
+
+    .dark_icon {
+      grid-column: 1 / 1;
+      grid-row: 1 / 1;
+      transition: transform 500ms;
+    }
+
+    .icon--moon {
+      transition-delay: 200ms;
+    }
+
+    .icon--sun {
+      transform: scale(0);
+    }
+
+    .AnimatedSun {
+      animation: rotateSun 15s linear infinite 0.8s;
+    }
+
+    .AnimatedMoon {
+      animation: tiltMoon 3s linear infinite 0.8s;
+      /* color: #30c59b80; */
+    }
+
+    #switch:checked+.icon--moon {
+      transform: rotate(360deg) scale(0);
+      animation: none;
+    }
+
+    #switch:checked~.icon--sun {
+      transition-delay: 200ms;
+      transform: scale(1) rotate(360deg);
+    }
+
+
+    @keyframes rotateSun {
+
+      0% {
+        transform: rotate(0);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes tiltMoon {
+ 
+      0% {
+        transform: rotate(0deg);
+      }
+    
+      25% {
+        transform: rotate(-10deg);
+      }
+    
+      75% {
+        transform: rotate(10deg);
+      }
+    
+      100% {
+        transform: rotate(0deg);
+      }
+    }
+    
+
 
     .short-input {
       width: fit-content !important;
@@ -32,11 +107,6 @@
       position: relative;
       transform: skewX(-15deg);
       transition: .2s linear;
-    }
-
-    .input-container:hover {
-      /* width: 930px; */
-      /* width: 110%; */
     }
 
 
@@ -67,11 +137,12 @@
       border-radius: 10px;
     }
 
-    .input.dark-in{
+    .input.dark-in {
       box-shadow: 6px 6px 0 #30C59B;
       border: 1px solid #FFF;
     }
-    .input.light-in{
+
+    .input.light-in {
       box-shadow: 6px 6px 0 black;
       border: 1px solid #30C59B;
     }
@@ -100,6 +171,7 @@
       border: 0.5px solid #30C59B;
       box-shadow: 10px 10px 0 #FFF;
     }
+
     .light-in:focus {
       outline: none;
       border: 0.5px solid black;
@@ -208,6 +280,7 @@
     .cta.dark-cta:focus-within {
       box-shadow: 10px 10px 0 #FFF;
     }
+
     .cta.light-cta:focus-within {
       box-shadow: 10px 10px 0 #30C59B;
     }
@@ -378,7 +451,7 @@
       /* -webkit-box-reflect: below -20px linear-gradient(transparent, #211e1e2e); */
     }
 
-    
+
 
 
 
@@ -532,6 +605,6 @@
       animation-delay: 1s;
     }
 
-    
+
 
   }
