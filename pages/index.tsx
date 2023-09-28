@@ -7,7 +7,7 @@ import ThemeToggle from "@/components/pages/DarkMode";
 import Url from "@/components/pages/Url";
 import Head from "next/head";
 import AnimatedCursor from "react-animated-cursor";
-import React,{useState} from 'react';
+import React, { useState } from "react";
 
 export default function Home() {
   const [isDarkModeOn, setIsDarkModeOn] = useState();
@@ -46,24 +46,26 @@ export default function Home() {
         // ]}
       />
 
-      <main
-        id="about"
-        className="relative z-[2]  dark:bg-[#191919] bg-white transition-all ease-in duration-500"
-      >
+      <main className="relative z-[2] dark:bg-[#191919] bg-white transition-all ease-in duration-500">
+        <ThemeToggle
+          isDarkModeOn={isDarkModeOn}
+          setIsDarkModeOn={setIsDarkModeOn}
+        />
         <Header />
-        <ThemeToggle isDarkModeOn={isDarkModeOn} setIsDarkModeOn={setIsDarkModeOn} />
-        <section className="p-[10px] md:p-[24px] overflow-hidden">
+        <section id="about" className="p-[10px] md:p-[24px] overflow-hidden">
           <Banner />
-          <div id="service" className="mt-[20px]"></div>
+        </section>
+        <section id="service" className="p-[10px] md:p-[24px] overflow-hidden">
+          {/* <div  className="mt-[20px]"></div> */}
           <Url isDarkModeOn={isDarkModeOn} />
         </section>
 
-        <section className="pt-[30px] lg:pt-[50px]">
+        <section id="boost" className="">
           <BoostBox />
         </section>
 
         <section id="contact" className=" md:pb-[24px] ">
-          <div className="lg:h-[100px] h-0"></div>
+          <div className="h-[30px]"></div>
           <ContactUs />
         </section>
       </main>

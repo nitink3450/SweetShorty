@@ -1,6 +1,7 @@
 import Button from "@/components/global/common/button1";
 import Button2 from "@/components/global/common/button2";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 import Tilt from "react-parallax-tilt";
 
@@ -43,13 +44,15 @@ const Banner = () => {
           {/* <Button>Get Started</Button> */}
 
           <div data-aos="fade-in">
-            <Button2
-              mr="group-hover:mr-[30px]"
-              ml="ml-[10px]"
-              class="lg:p-[11px_33px] p-[8px_20px] lg:text-[20px] text-[17.37px] "
-            >
-              Get Started
-            </Button2>
+            <a href="#service">
+              <Button2
+                mr="group-hover:mr-[30px]"
+                ml="ml-[10px]"
+                class="lg:p-[11px_33px] p-[8px_20px] lg:text-[20px] text-[17.37px] "
+              >
+                Get Started
+              </Button2>
+            </a>
           </div>
         </div>
         <div

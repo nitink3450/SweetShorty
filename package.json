@@ -25,12 +25,14 @@
     "react-animated-cursor": "^2.10.1",
     "react-dom": "18.2.0",
     "react-icons": "^4.8.0",
-    "react-parallax-tilt": "^1.7.168"
+    "react-parallax-tilt": "^1.7.168",
+    "react-scroll": "^1.8.9"
   },
   "devDependencies": {
     "@types/aos": "^3.0.4",
     "@types/node": "^18.15.0",
     "@types/react": "^18.0.28",
+    "@types/react-scroll": "^1.8.8",
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.21",
     "tailwindcss": "^3.2.7",

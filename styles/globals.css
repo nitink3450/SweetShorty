@@ -10,12 +10,25 @@
   @layer components {}
 
   @layer utilities {
+
+    body {
+      scroll-behavior: smooth !important;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     .top-20 {
       top: 67px;
     }
 
     .space-50 {
       height: 50vh;
+    }
+
+    .activeLink {
+      color: #30C59B !important;
     }
 
     /* dark-btn toggle */
@@ -74,24 +87,24 @@
     }
 
     @keyframes tiltMoon {
- 
+
       0% {
         transform: rotate(0deg);
       }
-    
+
       25% {
         transform: rotate(-10deg);
       }
-    
+
       75% {
         transform: rotate(10deg);
       }
-    
+
       100% {
         transform: rotate(0deg);
       }
     }
-    
+
 
 
     .short-input {
@@ -203,13 +216,14 @@
       /* background: linear-gradient(180deg, rgba(10, 10, 10, 0.20) 0%, rgba(10, 10, 10, 0.04) 100%);
       backdrop-filter: blur(20px); */
       /* border-bottom: 1px solid #E8E8E8; */
+      /* border-bottom: 1px solid #232127; */
       padding: 16px !important;
       transition: all 0.5s ease-in;
     }
 
     .dark-btn {
-      /* background: linear-gradient(180deg, rgba(10, 10, 10, 0.20) 0%, rgba(10, 10, 10, 0.04) 100%);
-      backdrop-filter: blur(20px); */
+       /* background: linear-gradient(180deg, rgba(10, 10, 10, 0.20) 0%, rgba(10, 10, 10, 0.04) 100%); */
+      /* backdrop-filter: blur(20px); */
       /* background: #ffffff7d;
       background: #0000007d; */
       box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -224,6 +238,14 @@
         backdrop-filter: blur(0px);
         padding: 16px !important;
         transition: padding 0.5s ease;
+      }
+
+      .activeHead.activeHeadDarkBorder {
+        border-bottom: 1px solid #232127;
+      }
+
+      .activeHead.activeHeadLightBorder {
+        border-bottom: 1px solid #E8E8E8;
       }
     }
 

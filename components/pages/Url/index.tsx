@@ -126,7 +126,7 @@ const Url = ({isDarkModeOn}:any) => {
 
   return (
     <>
-      <div className=" w-full flex justify-center items-center flex-col mt-[50px] lg:mt-[100px] gap-[30px]">
+      <div className=" w-full flex justify-center items-center flex-col mt-[50px] lg:mt-[50px] gap-[30px]">
         <div className="w-full flex justify-center items-center flex-col gap-[5px]">
           <div data-aos="fade-in" className="lg:text-[40px] md:text-[20px] lg:text-start text-center text-[25px] font-semibold dark:text-[#F7F7F7] text-[#232127] lg:tracking-[-3px] tracking-[-1px] leading-[0.9]">
             {`We’ve`}
@@ -307,9 +307,10 @@ const Url = ({isDarkModeOn}:any) => {
               </Button2>
             </div>
           )}
+          
         </div>
-        <div data-aos="fade-in" className="lg:text-[14px] text-[10px] text-center lg:text-start font-normal text-[#9e9aa7]  leading-[1.5] mt-[10px] lg:mt-[10px]">
-          URL Shortener → By using our service you accept the{" "}
+        <div data-aos="fade-in" className="lg:text-[14px] text-[10px] text-center lg:text-start font-normal text-[#9e9aa7]  leading-[1.5] ">
+         SweetShorty The URL Shortener → By using our service you accept the{" "}
           <span className="text-[#1e5af9] cursor-pointer">
             Terms of service
           </span>{" "}

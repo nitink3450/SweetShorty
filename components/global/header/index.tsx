@@ -3,11 +3,13 @@ import { TiThMenu, TiPlus } from "react-icons/ti";
 import Button2 from "../common/button2";
 import { LogoSvg, SweetShortySvg, SwenflySvg } from "../common/svgs";
 import { useMediaQuery } from "../common/UseMediaQuery/UseMediaQuery";
+import { Link } from "react-scroll";
+
 const Header = () => {
   let Links = [
-    { name: "About", link: "#about" },
-    { name: "Service", link: "#service" },
-    { name: "Contact Us", link: "#contact" },
+    { name: "About", link: "about" },
+    { name: "Service", link: "service" },
+    { name: "Contact Us", link: "contact" },
   ];
   let [open, setOpen] = useState(false);
 
@@ -45,9 +47,9 @@ const Header = () => {
   return (
     <>
       {/* shadow-md  */}
-      <div className="w-full sticky top-0 left-0 right-0 z-50 md:overflow-hidden transition-all ease-in duration-100">
+      <div className="w-full sticky top-0 left-0 right-0 z-50 md:overflow-hidden transition-all ease-in duration-100 ">
         <div
-          className={`9xx:flex items-center justify-between product_nav dark:bg-[#191919] bg-white 9xx:px-10 px-4 pb-4 pt-4 9xx:pt-10 z-50 relative transition-all ease-in duration-500`}
+          className={`9xx:flex dark:activeHeadDarkBorder activeHeadLightBorder dark:bg-[#191919] bg-white items-center justify-between product_nav  9xx:px-10 px-4 pb-4 pt-4 9xx:pt-10 z-50 relative transition-all ease-in duration-500`}
         >
           <div className="cursor-pointer gap-[10px] flex items-center">
             {/* <div className="h-[35px] w-[35px] flex justify-center items-center mr-[10px]">
@@ -91,14 +93,25 @@ const Header = () => {
               open ? "top-20 " : "top-[-490px]"
             }`}
           >
-            {Links.map((link) => (
+            {Links.map((link, index) => (
               <li key={link.name} className="9xx:ml-8 text-xl 9xx:my-0 my-7">
-                <a
+                <Link
+                  activeClass="activeLink"
+                  spy
+                  hashSpy={true}
+                  to={link.link}
+                  offset={isMobile ? -40 : -55}
+                  className="text-gray-800 dark:text-[#7b1fa2] dark:hover:text-[#30C59B] hover:text-[#30C59B] duration-500"
+                >
+                  {link.name}
+                </Link>
+
+                {/* <a
                   href={link.link}
                   className="text-gray-800 dark:text-[#7b1fa2] dark:hover:text-[#30C59B] hover:text-[#30C59B] duration-500"
                 >
                   {link.name}
-                </a>
+                </a> */}
               </li>
             ))}
             <div
