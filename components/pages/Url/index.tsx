@@ -1,5 +1,5 @@
 import Button2 from "@/components/global/common/button2";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useLayoutEffect } from "react";
 import { BiLink } from "react-icons/bi";
 import { IoCloseSharp } from "react-icons/io5";
 import { FaDownload } from "react-icons/fa";
@@ -8,8 +8,10 @@ import html2canvas from "html2canvas"; // Import the html2canvas library
 import jsPDF from "jspdf"; // Import the jsPDF library
 import Link from "next/link";
 import { useMediaQuery } from "../../global/common/UseMediaQuery/UseMediaQuery";
+// import gsap from "gsap";
+// import { ScrollTrigger as Scrolltrigger } from "gsap/dist/ScrollTrigger";
 
-const Url = ({isDarkModeOn}:any) => {
+const Url = ({ isDarkModeOn }: any) => {
   const qrCodeRef = useRef<HTMLDivElement | null>(null);
   const isMobile = useMediaQuery("(max-width:768px");
 
@@ -124,23 +126,66 @@ const Url = ({isDarkModeOn}:any) => {
     }, 2000);
   };
 
+  // gsap.registerPlugin(Scrolltrigger);
+  // gsap.defaults({ ease: "none" });
+
+  // useLayoutEffect(() => {
+  //   gsap
+  //     .timeline({
+  //       scrollTrigger: {
+  //         trigger: "#start1",
+  //         start: "100 bottom",
+  //         scrub: true,
+  //         end: "+=500",
+  //       },
+  //     })
+  //     .to("#one", {
+  //       width: "100%",
+  //     })
+  //     .to("#two", {
+  //       width: "100%",
+  //     });
+  // });
+
   return (
     <>
       <div className=" w-full flex justify-center items-center flex-col mt-[50px] lg:mt-[50px] gap-[30px]">
         <div className="w-full flex justify-center items-center flex-col gap-[5px]">
-          <div data-aos="fade-in" className="lg:text-[40px] md:text-[20px] lg:text-start text-center text-[25px] font-semibold dark:text-[#F7F7F7] text-[#232127] lg:tracking-[-3px] tracking-[-1px] leading-[0.9]">
+          <div
+            data-aos="fade-in"
+            className="lg:text-[40px] md:text-[20px] lg:text-start text-center text-[25px] font-semibold dark:text-[#F7F7F7] text-[#232127] lg:tracking-[-3px] tracking-[-1px] leading-[0.9]"
+          >
             {`We’ve`}
-            <span className="text-[#7b1fa2]  ease-in-out duration-500 transition  hover:text-[#30C59B] ml-[6px]">expanded!</span>
+
+            <span className="text-[#7b1fa2]  ease-in-out duration-500 transition  hover:text-[#30C59B] ml-[6px]">
+              expanded!
+            </span>
           </div>
-          <div data-aos="fade-in" className="lg:text-[40px] md:text-[20px] lg:text-start text-center text-[20px] font-semibold dark:text-[#F7F7F7] text-[#232127] lg:tracking-[-3px] tracking-[-1px] leading-[0.9]">
-            <span className="text-[#7b1fa2] transition ease-in-out duration-500 hover:text-[#30C59B]">Shorten</span> URLs. Generate{" "}
-            <span className="text-[#7b1fa2] transition ease-in-out duration-500 hover:text-[#30C59B]">QR</span> Codes.
+
+          <div
+            data-aos="fade-in"
+            className="lg:text-[40px] md:text-[20px] lg:text-start text-center text-[20px] font-semibold dark:text-[#F7F7F7] text-[#232127] lg:tracking-[-3px] tracking-[-1px] leading-[0.9]"
+          >
+            <span className="text-[#7b1fa2] transition ease-in-out duration-500 hover:text-[#30C59B]">
+              Shorten
+            </span>{" "}
+            URLs. Generate{" "}
+            <span className="text-[#7b1fa2] transition ease-in-out duration-500 hover:text-[#30C59B]">
+              QR
+            </span>{" "}
+            Codes.
           </div>
-          <div data-aos="fade-in" className="lg:text-[20px] text-[14.72px] text-center lg:text-start font-normal  text-[#9e9aa7]  leading-[1.5] mt-[5px] lg:mt-[10px]">
+          <div
+            data-aos="fade-in"
+            className="lg:text-[20px] text-[14.72px] text-center lg:text-start font-normal  text-[#9e9aa7]  leading-[1.5] mt-[5px] lg:mt-[10px]"
+          >
             copy your long boring url. Paste it Below. Then 💥 You got it right!
           </div>
         </div>
-        <div data-aos="fade-in" className="w-full mt-[10px] flex justify-center items-center 2xl:w-[1240px] 0 gap-[30px] 2xl:gap-[50px] flex-col 2xl:flex-row">
+        <div
+          data-aos="fade-in"
+          className="w-full mt-[10px] flex justify-center items-center 2xl:w-[1240px] 0 gap-[30px] 2xl:gap-[50px] flex-col 2xl:flex-row"
+        >
           <div className="input-container w-[90%] hover:w-[98%] lg:w-[900px] lg:hover:w-[930px]">
             <input
               type="text"
@@ -181,7 +226,10 @@ const Url = ({isDarkModeOn}:any) => {
           </Button2>
         </div>{" "}
         {shortUrl && (
-          <div data-aos="fade-in" className="w-full mt-[10px] 11px:mt-[0px] flex justify-center items-center 2xl:w-[1240px] 0 gap-[30px] 2xl:gap-[50px] flex-col 2xl:flex-row">
+          <div
+            data-aos="fade-in"
+            className="w-full mt-[10px] 11px:mt-[0px] flex justify-center items-center 2xl:w-[1240px] 0 gap-[30px] 2xl:gap-[50px] flex-col 2xl:flex-row"
+          >
             <div
               style={{ width: "fit-content" }}
               className=" input-container input dark:dark-in light-in short-input flex text-[17.37px] lg:text-[25px]"
@@ -256,7 +304,9 @@ const Url = ({isDarkModeOn}:any) => {
               <QRCode
                 id="qr-gen"
                 renderAs="svg"
-                className={`qr-code ${isDarkModeOn ? 'qr-code-transition' : ''}`}
+                className={`qr-code ${
+                  isDarkModeOn ? "qr-code-transition" : ""
+                }`}
                 bgColor={isDarkModeOn ? "#191919" : "white"}
                 fgColor={isDarkModeOn ? "white" : "#191919"}
                 level="H"
@@ -307,10 +357,12 @@ const Url = ({isDarkModeOn}:any) => {
               </Button2>
             </div>
           )}
-          
         </div>
-        <div data-aos="fade-in" className="lg:text-[14px] text-[10px] text-center lg:text-start font-normal text-[#9e9aa7]  leading-[1.5] ">
-         SweetShorty The URL Shortener → By using our service you accept the{" "}
+        <div
+          data-aos="fade-in"
+          className="lg:text-[14px] text-[10px] text-center lg:text-start font-normal text-[#9e9aa7]  leading-[1.5] "
+        >
+          SweetShorty The URL Shortener → By using our service you accept the{" "}
           <span className="text-[#1e5af9] cursor-pointer">
             Terms of service
           </span>{" "}

@@ -15,6 +15,9 @@ import {
   SweetShortySvg,
 } from "../common/svgs";
 import Link from "next/link";
+import {textLinks} from "./textLinksData";
+
+
 const Footer = () => {
   useEffect(() => {
     const footerElement = document.querySelector(".footer_fixed");
@@ -32,20 +35,7 @@ const Footer = () => {
     };
   }, []);
 
-  const textLinks = [
-    {
-      title: "Features",
-      bodyText: ["Link Shortening", "Branded Links", "Analytics"],
-    },
-    {
-      title: "Resources",
-      bodyText: ["Blog", "Developers", "Support"],
-    },
-    {
-      title: "Company",
-      bodyText: ["About", "Our Team", "Careers", "Contact"],
-    },
-  ];
+
   return (
     <>
       <div className="bg-[#232127]  text-white gap-[0px] 11x:gap-[10px] flex flex-col footer_fixed">

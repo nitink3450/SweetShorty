@@ -4,13 +4,10 @@ import Button2 from "../common/button2";
 import { LogoSvg, SweetShortySvg, SwenflySvg } from "../common/svgs";
 import { useMediaQuery } from "../common/UseMediaQuery/UseMediaQuery";
 import { Link } from "react-scroll";
+import {Links} from "./headerLinks";
 
 const Header = () => {
-  let Links = [
-    { name: "About", link: "about" },
-    { name: "Service", link: "service" },
-    { name: "Contact Us", link: "contact" },
-  ];
+ 
   let [open, setOpen] = useState(false);
 
   const isMobile = useMediaQuery("(max-width:768px)");
