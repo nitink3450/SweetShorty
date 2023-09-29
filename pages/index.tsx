@@ -21,7 +21,7 @@ export default function Home() {
           content="SweetShorty is a free URL shortener that helps you shorten long links and track their performance. Improve your efficiency and share smarter links with SweetShorty. Generate QR codes for your links too!"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/logo.svg" />
+        <link rel="icon" href="/logo1.svg" />
       </Head>
 
       <AnimatedCursor
