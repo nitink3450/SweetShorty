@@ -1,4 +1,5 @@
 
+import Button2 from "@/components/global/common/button2";
 import React, { useEffect } from "react";
 const LoginPage = () => {
   useEffect(() => {
@@ -93,10 +94,9 @@ const LoginPage = () => {
         <div className="panels-container">
           <div className="panel left-panel">
             <div className="content">
-              <h3>New here ?</h3>
+              <h3>Are you new here?</h3>
               <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Debitis, ex ratione. Aliquid!
+              {`We're thrilled to have you join us on this exciting journey. Sign up now and become a part of our vibrant community!`}
               </p>
               <button className="btn transparent" id="sign-up-btn">
                 Sign up
@@ -108,8 +108,7 @@ const LoginPage = () => {
             <div className="content">
               <h3>One of us ?</h3>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-                laboriosam ad deleniti.
+             {` Welcome back, esteemed member! We're thrilled to see you again. Sign in now to continue your journey with us`}
               </p>
               <button className="btn transparent" id="sign-in-btn">
                 Sign in
