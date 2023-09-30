@@ -6,7 +6,7 @@ import ContactUs from "@/components/pages/Contact";
 import ThemeToggle from "@/components/pages/DarkMode";
 import Url from "@/components/pages/Url";
 import Head from "next/head";
-import AnimatedCursor from "react-animated-cursor";
+
 import React, { useState } from "react";
 
 export default function Home() {
@@ -24,27 +24,7 @@ export default function Home() {
         <link rel="icon" href="/logo1.svg" />
       </Head>
 
-      <AnimatedCursor
-        innerSize={20}
-        outerSize={30}
-        color="48,197,155"
-        outerAlpha={0.2}
-        innerScale={0.7}
-        outerScale={5}
-        // clickables={[
-        //   "a",
-        //   'input[type="text"]',
-        //   'input[type="email"]',
-        //   'input[type="number"]',
-        //   'input[type="submit"]',
-        //   'input[type="image"]',
-        //   "label[for]",
-        //   "select",
-        //   "textarea",
-        //   "button",
-        //   ".link",
-        // ]}
-      />
+      
 
       <main className="relative z-[2] dark:bg-[#191919] bg-white transition-all ease-in duration-500">
         <ThemeToggle

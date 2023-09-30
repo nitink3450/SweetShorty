@@ -4,6 +4,7 @@ import Button2 from "../common/button2";
 import { LogoSvg, SweetShortySvg, SwenflySvg } from "../common/svgs";
 import { useMediaQuery } from "../common/UseMediaQuery/UseMediaQuery";
 import { Link } from "react-scroll";
+import Link1 from "next/link";
 import {Links} from "./headerLinks";
 
 const Header = () => {
@@ -116,14 +117,16 @@ const Header = () => {
             9xx:flex-row flex-col 9xx:justify-center items-start 9xx:items-center 9xx:gap-0 gap-10"
             >
               <li className="9xx:ml-8 text-xl 9xx:my-0">
-                <a
-                  href="#"
+              <Link1 href="/login" passHref target="_self">
+                <p
                   className="text-gray-800 dark:text-[#7b1fa2] dark:hover:text-[#30C59B] hover:text-[#30C59B] 9xx:mr-8 duration-500"
                 >
                   Login
-                </a>
+                </p>
+                </Link1>
               </li>
               {/* <Button>SignUp</Button> */}
+              <Link1 href="/login" passHref target="_self">
               <Button2
                 mr="group-hover:mr-[20px]"
                 ml="ml-[3px]"
@@ -131,6 +134,7 @@ const Header = () => {
               >
                 SignUp
               </Button2>
+              </Link1>
             </div>
           </ul>
         </div>
