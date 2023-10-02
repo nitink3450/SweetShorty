@@ -149,6 +149,10 @@
       transition: 0.5s;
       border-radius: 10px;
     }
+    .error{
+      color: red;
+      font-size: 10px;
+    }
 
     .input.dark-in {
       box-shadow: 6px 6px 0 #30C59B;
