@@ -5,6 +5,7 @@ import {
   validateSignupForm,
 } from "../../../public/js/LoginValidation";
 import { useRouter } from "next/router";
+import { FaCheck, FaTimes, FaInfoCircle } from "react-icons/fa";
 
 const LoginPage = () => {
   const router = useRouter();
@@ -35,6 +36,7 @@ const LoginPage = () => {
   const [loginForm, setLoginForm] = useState({
     username: "",
     password: "",
+    showPassword: false,
   });
 
   const [signupForm, setSignupForm] = useState({
@@ -42,17 +44,19 @@ const LoginPage = () => {
     email: "",
     password: "",
     mobile: "",
+    showPassword: false,
   });
 
   const [mobileInput, setMobileInput] = useState<any>("");
-  const [loginErrors, setLoginErrors] = useState<any>("");
-  const [signupErrors, setSignupErrors] = useState<any>("");
+  const [loginErrors, setLoginErrors] = useState<any>({});
+  const [signupErrors, setSignupErrors] = useState<any>({});
+  const [password, setPassword] = useState("");
+  const [isValid, setIsValid] = useState(false);
 
   const handleLoginSubmit = (e: any) => {
     e.preventDefault();
     const errors = validateLoginForm(loginForm.username, loginForm.password);
-    if (Object.keys(errors).length === 0) {
-      // Form is valid, you can perform login logic here
+    if (Object.keys(errors).length === 0 && isValid) {
       router.push("/");
     } else {
       setLoginErrors(errors);
@@ -63,17 +67,74 @@ const LoginPage = () => {
     e.preventDefault();
     const errors = validateSignupForm(
       signupForm.username,
-      signupForm.mobile,
       signupForm.email,
+      signupForm.mobile,
       signupForm.password
     );
     if (Object.keys(errors).length === 0) {
-      // Form is valid, you can perform signup logic here
       router.push("/");
     } else {
       setSignupErrors(errors);
     }
   };
+
+  const handlePasswordToggle = (formType: string) => {
+    if (formType === "login") {
+      setLoginForm({ ...loginForm, showPassword: !loginForm.showPassword });
+    } else if (formType === "signup") {
+      setSignupForm({ ...signupForm, showPassword: !signupForm.showPassword });
+    }
+  };
+
+  const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const newPassword = e.target.value;
+    setPassword(newPassword);
+    setLoginForm({ ...loginForm, password: newPassword });
+    setSignupForm({ ...signupForm, password: newPassword });
+
+    // Check if the password meets all the criteria
+    const hasLowerCase = /[a-z]/.test(newPassword);
+    const hasUpperCase = /[A-Z]/.test(newPassword);
+    const hasNumber = /\d/.test(newPassword);
+    const hasSpecialChar = /[\W_]/.test(newPassword);
+    const isMinLength = newPassword.length >= 8;
+
+    const conditionsMet = [
+      hasLowerCase,
+      hasUpperCase,
+      hasNumber,
+      hasSpecialChar,
+      isMinLength,
+    ];
+    const conditionsPassed =
+      conditionsMet.filter((condition) => condition).length === 5;
+
+    setIsValid(conditionsPassed);
+  };
+
+  let conditionsPassed: any;
+  const getProgressBarColor = () => {
+    const conditionsMet = [
+      /[a-z]/.test(password),
+      /[A-Z]/.test(password),
+      /\d/.test(password),
+      /[\W_]/.test(password),
+      password.length >= 8,
+    ];
+    conditionsPassed = conditionsMet.filter((condition) => condition).length;
+
+    const width = (conditionsPassed / 5) * 100;
+
+    if (width <= 40) {
+      return "bg-red-400";
+    } else if (width > 40 && width <= 80) {
+      return "bg-yellow-400";
+    } else {
+      return "bg-green-400";
+    }
+  };
+
+  const progressBarColor = getProgressBarColor();
 
   return (
     <>
@@ -82,7 +143,7 @@ const LoginPage = () => {
           <div className="signin-signup">
             <form
               action="#"
-              className="sign-in-form"
+              className="sign-in-form form"
               onSubmit={handleLoginSubmit}
             >
               <h2 className="title">Sign in</h2>
@@ -98,22 +159,92 @@ const LoginPage = () => {
                 />
               </div>
               {loginErrors.username && (
-                <p className="error">{loginErrors.username}</p>
+                <p className="error">
+                  <i className="fa fa-info-circle text-danger"></i>&nbsp;
+                  {loginErrors.username}
+                </p>
               )}
+
               <div className="input-field">
                 <i className="fas fa-lock"></i>
                 <input
-                  type="password"
+                  type={loginForm.showPassword ? "text" : "password"}
                   placeholder="Password"
                   value={loginForm.password}
-                  onChange={(e) =>
-                    setLoginForm({ ...loginForm, password: e.target.value })
-                  }
+                  onChange={handlePasswordChange}
                 />
+                <i
+                  className={`fas ${
+                    loginForm.showPassword ? "fa-eye-slash" : "fa-eye"
+                  } password-toggle-icon`}
+                  onClick={() => handlePasswordToggle("login")}
+                ></i>
               </div>
               {loginErrors.password && (
-                <p className="error">{loginErrors.password}</p>
+                <p className="error">
+                  <i className="fa fa-info-circle text-danger"></i>&nbsp;
+                  {loginErrors.password}
+                </p>
               )}
+              {loginForm.password && (
+                <div className="w-full px-3 md:px-6">
+                  {!isValid && (
+                    <>
+                      <div className="mt-1">
+                        <div className="w-full h-1 bg-gray-300 rounded-full">
+                          <div
+                            className={`h-full rounded-full ${progressBarColor}`}
+                            style={{
+                              width: `${(conditionsPassed / 5) * 100}%`,
+                            }}
+                          ></div>
+                        </div>
+                      </div>
+                      <div className="mt-2">
+                        <ul className="list-inside passPoints">
+                          <li
+                            className={`${
+                              /[a-z]/.test(password) && /[A-Z]/.test(password)
+                                ? "text-green-500"
+                                : "text-gray-300"
+                            }`}
+                          >
+                            <FaCheck /> 1 lowercase & 1 uppercase
+                          </li>
+                          <li
+                            className={`${
+                              /\d/.test(password)
+                                ? "text-green-500"
+                                : "text-gray-300"
+                            }`}
+                          >
+                            <FaCheck />1 Number (0-9)
+                          </li>
+                          <li
+                            className={`${
+                              /[\W_]/.test(password)
+                                ? "text-green-500"
+                                : "text-gray-300"
+                            }`}
+                          >
+                            <FaCheck />1 Special Character (!@#$%^&*)
+                          </li>
+                          <li
+                            className={`${
+                              password.length >= 8
+                                ? "text-green-500"
+                                : "text-gray-300"
+                            }`}
+                          >
+                            <FaCheck /> Atleast 8 Character
+                          </li>
+                        </ul>
+                      </div>
+                    </>
+                  )}
+                </div>
+              )}
+
               <input type="submit" value="Login" className="btn solid" />
               <p className="social-text">Or Sign in with social platforms</p>
               <div className="social-media">
@@ -133,7 +264,7 @@ const LoginPage = () => {
             </form>
             <form
               action="#"
-              className="sign-up-form"
+              className="sign-up-form form"
               onSubmit={handleSignupSubmit}
             >
               <h2 className="title">Sign up</h2>
@@ -149,12 +280,15 @@ const LoginPage = () => {
                 />
               </div>
               {signupErrors.username && (
-                <p className="error">{signupErrors.username}</p>
+                <p className="error">
+                  <i className="fa fa-info-circle text-danger"></i>&nbsp;
+                  {signupErrors.username}
+                </p>
               )}
               <div className="input-field">
                 <i className="fas fa-envelope"></i>
                 <input
-                  type="text"
+                  type="mail"
                   placeholder="Email"
                   value={signupForm.email}
                   onChange={(e) =>
@@ -163,7 +297,10 @@ const LoginPage = () => {
                 />
               </div>
               {signupErrors.email && (
-                <p className="error">{signupErrors.email}</p>
+                <p className="error">
+                  <i className="fa fa-info-circle text-danger"></i>&nbsp;
+                  {signupErrors.email}
+                </p>
               )}
               <div className="input-field">
                 <i className="fas fa-phone"></i>
@@ -186,21 +323,91 @@ const LoginPage = () => {
                 />
               </div>
               {signupErrors.mobile && (
-                <p className="error">{signupErrors.mobile}</p>
+                <p className="error">
+                  <i className="fa fa-info-circle text-danger"></i>&nbsp;
+                  {signupErrors.mobile}
+                </p>
               )}
+
               <div className="input-field">
                 <i className="fas fa-lock"></i>
                 <input
-                  type="password"
+                  type={signupForm.showPassword ? "text" : "password"}
                   placeholder="Password"
                   value={signupForm.password}
-                  onChange={(e) =>
-                    setSignupForm({ ...signupForm, password: e.target.value })
-                  }
+                  onChange={handlePasswordChange}
                 />
+                <i
+                  className={`fas ${
+                    signupForm.showPassword ? "fa-eye-slash" : "fa-eye"
+                  } password-toggle-icon`}
+                  onClick={() => handlePasswordToggle("signup")}
+                ></i>
               </div>
+
               {signupErrors.password && (
-                <p className="error">{signupErrors.password}</p>
+                <p className="error">
+                  <i className="fa fa-info-circle text-danger"></i>&nbsp;
+                  {signupErrors.password}
+                </p>
+              )}
+              {signupForm.password && (
+                <div className="w-full px-3 md:px-6">
+                  {!isValid && (
+                    <>
+                      <div className="mt-1">
+                        <div className="w-full h-1 bg-gray-300 rounded-full">
+                          <div
+                            className={`h-full rounded-full ${progressBarColor}`}
+                            style={{
+                              width: `${(conditionsPassed / 5) * 100}%`,
+                            }}
+                          ></div>
+                        </div>
+                      </div>
+                      <div className="mt-2">
+                        <ul className="list-inside passPoints">
+                          <li
+                            className={`${
+                              /[a-z]/.test(password) && /[A-Z]/.test(password)
+                                ? "text-green-500"
+                                : "text-gray-300"
+                            }`}
+                          >
+                            <FaCheck /> 1 lowercase & 1 uppercase
+                          </li>
+                          <li
+                            className={`${
+                              /\d/.test(password)
+                                ? "text-green-500"
+                                : "text-gray-300"
+                            }`}
+                          >
+                            <FaCheck />1 Number (0-9)
+                          </li>
+                          <li
+                            className={`${
+                              /[\W_]/.test(password)
+                                ? "text-green-500"
+                                : "text-gray-300"
+                            }`}
+                          >
+                            <FaCheck />1 Special Character (!@#$%^&*)
+                          </li>
+                          <li
+                            className={`${
+                              password.length >= 8
+                                ? "text-green-500"
+                                : "text-gray-300"
+                            }`}
+                          >
+                            <FaCheck /> Atleast 8 Character
+                          </li>
+                        </ul>
+                      </div>
+                    </>
+                  )}
+                </div>
               )}
               <input type="submit" className="btn" value="Sign up" />
               <p className="social-text">Or Sign up with social platforms</p>

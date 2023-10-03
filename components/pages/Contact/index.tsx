@@ -2,6 +2,7 @@ import Button2 from "@/components/global/common/button2";
 import React from "react";
 
 const ContactUs = () => {
+  
   const accessKey = process.env.NEXT_PUBLIC_YOUR_ACCESS_KEY;
 
   return (
@@ -15,7 +16,7 @@ const ContactUs = () => {
               data-aos="fade-in"
               className="lg:text-[60px] w-full md:text-[40px] text-center text-[25px] font-semibold dark:text-white text-[#232127] lg:tracking-[-3px] tracking-[-1px] leading-[0.9] mb-[10px]"
             >
-              Contact{" "}
+              Contact
               <span className="text-[#7b1fa2] transition ease-in-out duration-500 hover:text-[#30C59B]">
                 Us
               </span>

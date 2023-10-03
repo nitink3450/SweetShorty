@@ -26,24 +26,24 @@
   z-index: 5;
 }
 
-form {
+.form {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 0rem 5rem;
+  padding: 0rem 12rem;
   transition: all 0.2s 0.7s;
   overflow: hidden;
   grid-column: 1 / 2;
   grid-row: 1 / 2;
 }
 
-form.sign-up-form {
+.form.sign-up-form {
   opacity: 0;
   z-index: 1;
 }
 
-form.sign-in-form {
+.form.sign-in-form {
   z-index: 2;
 }
 
@@ -72,6 +72,13 @@ form.sign-in-form {
   color: #acacac;
   transition: 0.5s;
   font-size: 1.1rem;
+}
+
+.input-field .password-toggle-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 25px;
 }
 
 .input-field input {
@@ -250,12 +257,12 @@ form.sign-in-form {
   left: 25%;
 }
 
-.container.sign-up-mode form.sign-up-form {
+.container.sign-up-mode .form.sign-up-form {
   opacity: 1;
   z-index: 2;
 }
 
-.container.sign-up-mode form.sign-in-form {
+.container.sign-up-mode .form.sign-in-form {
   opacity: 0;
   z-index: 1;
 }
@@ -271,6 +278,12 @@ form.sign-in-form {
 
 .container.sign-up-mode .right-panel {
   pointer-events: all;
+}
+
+.passPoints li {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 @media (max-width: 870px) {
@@ -378,7 +391,7 @@ form.sign-in-form {
 }
 
 @media (max-width: 570px) {
-  form {
+  .form {
     padding: 0 1.5rem;
   }
 
