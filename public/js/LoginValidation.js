@@ -12,13 +12,13 @@ const validateLoginForm = (username, password) => {
     if (!password) {
         errors.password = "Password is required";
     }
-    // else if (
-    //     !/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W)/.test(password) ||
-    //     password.length < 8
-    // ) {
-    //     errors.password =
-    //         "Password must contain at least one uppercase letter, one lowercase letter, one digit, one special character, and be at least 8 characters long";
-    // }
+    else if (
+        !/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W)/.test(password) ||
+        password.length < 8
+    ) {
+        errors.password =
+            "To ensure a strong password, please fulfill all the following conditions.";
+    }
 
     return errors;
 };
@@ -41,7 +41,8 @@ const validateSignupForm = (username, email, mobile, password) => {
     if (!password) {
         errors.password = "Password is required";
     } else if (
-        !/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W)/.test(password)
+        !/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*\W)/.test(password) ||
+        password.length < 8
     ) {
         errors.password =
             "To ensure a strong password, please fulfill all the following conditions.";
