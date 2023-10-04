@@ -6,6 +6,13 @@
   overflow: hidden;
 }
 
+.error {
+  color: red;
+  font-size: 10px;
+  width: 100%;
+  padding-left: 30px;
+}
+
 .forms-container {
   position: absolute;
   width: 100%;
@@ -132,7 +139,7 @@
 
 .btn {
   width: 150px;
-  background-color: #5995fd;
+  /* background-color: #5995fd; */
   background-color: #7b1fa2;
   border: none;
   outline: none;
@@ -219,6 +226,7 @@
   padding: 0.7rem 0;
 }
 
+/* 
 .btn.transparent {
   margin: 0;
   background: none;
@@ -230,10 +238,26 @@
 }
 
 .btn.transparent:hover {
-  /* background-color: #4d84e2; */
+  background-color: #4d84e2;
   background-color: #30C59B;
   border: 2px solid transparent;
   box-shadow: 4px 4px 0 black;
+} */
+
+.btn.transparent {
+  margin: 0;
+  width: 130px;
+  height: 41px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  background-color: #30C59B;
+  border: 2px solid transparent;
+  box-shadow: 4px 4px 0 black;
+}
+
+.btn.transparent:hover {
+  border: 2px solid #fff;
+  background: none;
 }
 
 .right-panel .image,
