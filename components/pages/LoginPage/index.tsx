@@ -86,19 +86,27 @@ const LoginPage = () => {
     }
   };
 
-  const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const newPassword = e.target.value;
-    setPassword(newPassword);
-    setLoginForm({ ...loginForm, password: newPassword });
-    setSignupForm({ ...signupForm, password: newPassword });
 
+  const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>, formType: string) => {
+    const eventValue = e.target.value; // Get the event value
+    let newPasswordLogin = loginForm.password; // Initialize newPassword for login form
+    let newPasswordSignup = signupForm.password; // Initialize newPassword for signup form
+  
+    if (formType === "login") {
+      newPasswordLogin = eventValue; // Update newPassword for login form
+    } else if (formType === "signup") {
+      newPasswordSignup = eventValue; // Update newPassword for signup form
+    }
+  
+    setPassword(eventValue); // Set password to the current event value
+  
     // Check if the password meets all the criteria
-    const hasLowerCase = /[a-z]/.test(newPassword);
-    const hasUpperCase = /[A-Z]/.test(newPassword);
-    const hasNumber = /\d/.test(newPassword);
-    const hasSpecialChar = /[\W_]/.test(newPassword);
-    const isMinLength = newPassword.length >= 8;
-
+    const hasLowerCase = /[a-z]/.test(eventValue);
+    const hasUpperCase = /[A-Z]/.test(eventValue);
+    const hasNumber = /\d/.test(eventValue);
+    const hasSpecialChar = /[\W_]/.test(eventValue);
+    const isMinLength = eventValue.length >= 8;
+  
     const conditionsMet = [
       hasLowerCase,
       hasUpperCase,
@@ -108,8 +116,15 @@ const LoginPage = () => {
     ];
     const conditionsPassed =
       conditionsMet.filter((condition) => condition).length === 5;
-
+  
     setIsValid(conditionsPassed);
+  
+    // Update the appropriate form's password state
+    if (formType === "login") {
+      setLoginForm({ ...loginForm, password: newPasswordLogin });
+    } else if (formType === "signup") {
+      setSignupForm({ ...signupForm, password: newPasswordSignup });
+    }
   };
 
   let conditionsPassed: any;
@@ -136,6 +151,20 @@ const LoginPage = () => {
 
   const progressBarColor = getProgressBarColor();
 
+  const handleLoginInputChange = (e: any) => {
+    const { name, value } = e.target;
+    setLoginForm({ ...loginForm, [name]: value });
+    // Clear the error when the input changes
+    setLoginErrors({ ...loginErrors, [name]: "" });
+  };
+
+  const handleSignupInputChange = (e: any) => {
+    const { name, value } = e.target;
+    setSignupForm({ ...signupForm, [name]: value });
+    // Clear the error when the input changes
+    setSignupErrors({ ...signupErrors, [name]: "" });
+  };
+
   return (
     <>
       <div className="container dark:bg-[#191919] transition-all ease-in duration-500">
@@ -151,15 +180,17 @@ const LoginPage = () => {
                 <i className="fas fa-user"></i>
                 <input
                   type="text"
+                  name="username"
                   placeholder="Username"
                   value={loginForm.username}
-                  onChange={(e) =>
-                    setLoginForm({ ...loginForm, username: e.target.value })
-                  }
+                  onChange={(e) => {
+                    setLoginForm({ ...loginForm, username: e.target.value });
+                    handleLoginInputChange(e);
+                  }}
                 />
               </div>
               {loginErrors.username && (
-                <p className="error">
+                <p className="error dark:font-semibold">
                   <i className="fa fa-info-circle text-danger"></i>&nbsp;
                   {loginErrors.username}
                 </p>
@@ -170,8 +201,9 @@ const LoginPage = () => {
                 <input
                   type={loginForm.showPassword ? "text" : "password"}
                   placeholder="Password"
+                  name="password"
                   value={loginForm.password}
-                  onChange={handlePasswordChange}
+                  onChange={(e) => handlePasswordChange(e, "login")}
                 />
                 <i
                   className={`fas ${
@@ -181,25 +213,25 @@ const LoginPage = () => {
                 ></i>
               </div>
               {loginErrors.password && (
-                <p className="error">
+                <p className="error dark:font-semibold">
                   <i className="fa fa-info-circle text-danger"></i>&nbsp;
                   {loginErrors.password}
                 </p>
               )}
               {loginForm.password && (
                 <div className="w-full px-3 md:px-6">
+                  <div className="mt-1">
+                    <div className="w-full h-1 bg-gray-300 rounded-full">
+                      <div
+                        className={`h-full rounded-full ${progressBarColor}`}
+                        style={{
+                          width: `${(conditionsPassed / 5) * 100}%`,
+                        }}
+                      ></div>
+                    </div>
+                  </div>
                   {!isValid && (
                     <>
-                      <div className="mt-1">
-                        <div className="w-full h-1 bg-gray-300 rounded-full">
-                          <div
-                            className={`h-full rounded-full ${progressBarColor}`}
-                            style={{
-                              width: `${(conditionsPassed / 5) * 100}%`,
-                            }}
-                          ></div>
-                        </div>
-                      </div>
                       <div className="mt-2">
                         <ul className="list-inside passPoints">
                           <li
@@ -272,15 +304,17 @@ const LoginPage = () => {
                 <i className="fas fa-user"></i>
                 <input
                   type="text"
+                  name="username"
                   placeholder="Username"
                   value={signupForm.username}
-                  onChange={(e) =>
-                    setSignupForm({ ...signupForm, username: e.target.value })
-                  }
+                  onChange={(e) => {
+                    setSignupForm({ ...signupForm, username: e.target.value });
+                    handleSignupInputChange(e);
+                  }}
                 />
               </div>
               {signupErrors.username && (
-                <p className="error">
+                <p className="error dark:font-semibold">
                   <i className="fa fa-info-circle text-danger"></i>&nbsp;
                   {signupErrors.username}
                 </p>
@@ -289,15 +323,17 @@ const LoginPage = () => {
                 <i className="fas fa-envelope"></i>
                 <input
                   type="mail"
+                  name="email"
                   placeholder="Email"
                   value={signupForm.email}
-                  onChange={(e) =>
-                    setSignupForm({ ...signupForm, email: e.target.value })
-                  }
+                  onChange={(e) => {
+                    setSignupForm({ ...signupForm, email: e.target.value });
+                    handleSignupInputChange(e);
+                  }}
                 />
               </div>
               {signupErrors.email && (
-                <p className="error">
+                <p className="error dark:font-semibold">
                   <i className="fa fa-info-circle text-danger"></i>&nbsp;
                   {signupErrors.email}
                 </p>
@@ -307,6 +343,7 @@ const LoginPage = () => {
                 <input
                   type="tel" // Change the input type to "tel" for phone numbers
                   placeholder="Phone"
+                  name="mobile"
                   maxLength={14}
                   minLength={14}
                   value={mobileInput}
@@ -319,11 +356,12 @@ const LoginPage = () => {
                   onChange={(e) => {
                     setMobileInput(e.target.value);
                     setSignupForm({ ...signupForm, mobile: e.target.value });
+                    handleSignupInputChange(e);
                   }}
                 />
               </div>
               {signupErrors.mobile && (
-                <p className="error">
+                <p className="error dark:font-semibold">
                   <i className="fa fa-info-circle text-danger"></i>&nbsp;
                   {signupErrors.mobile}
                 </p>
@@ -334,8 +372,9 @@ const LoginPage = () => {
                 <input
                   type={signupForm.showPassword ? "text" : "password"}
                   placeholder="Password"
+                  name="password"
                   value={signupForm.password}
-                  onChange={handlePasswordChange}
+                  onChange={(e) => handlePasswordChange(e, "signup")}
                 />
                 <i
                   className={`fas ${
@@ -346,7 +385,7 @@ const LoginPage = () => {
               </div>
 
               {signupErrors.password && (
-                <p className="error">
+                <p className="error dark:font-semibold">
                   <i className="fa fa-info-circle text-danger"></i>&nbsp;
                   {signupErrors.password}
                 </p>
