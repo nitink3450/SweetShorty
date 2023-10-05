@@ -1,6 +1,7 @@
 import LoginPage from "@/components/pages/LoginPage";
-import React from "react";
+import React, { useState } from "react";
 import Head from "next/head";
+import ThemeToggle from "@/components/pages/DarkMode";
 
 const login = () => {
   return (

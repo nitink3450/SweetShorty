@@ -1,13 +1,17 @@
 import "@/styles/globals.css";
 import "@/styles/login.css";
-import { useEffect } from "react";
+import { useEffect,useState } from "react";
 import type { AppProps } from "next/app";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { ThemeProvider } from "next-themes";
 import AnimatedCursor from "react-animated-cursor";
+import ThemeToggle from "@/components/pages/DarkMode";
 
 export default function App({ Component, pageProps }: AppProps) {
+
+  const [isDarkModeOn, setIsDarkModeOn] = useState();
+
   useEffect(() => {
     AOS.init({
       duration: 1000,
@@ -17,6 +21,7 @@ export default function App({ Component, pageProps }: AppProps) {
       // startEvent: "load",
     });
   }, []);
+  
   return (
     <>
       <ThemeProvider attribute="class">
@@ -41,7 +46,11 @@ export default function App({ Component, pageProps }: AppProps) {
           //   ".link",
           // ]}
         />
-        <Component {...pageProps} />
+        <ThemeToggle
+          isDarkModeOn={isDarkModeOn}
+          setIsDarkModeOn={setIsDarkModeOn}
+        />
+        <Component {...pageProps} isDarkModeOn={isDarkModeOn} />
       </ThemeProvider>
     </>
   );

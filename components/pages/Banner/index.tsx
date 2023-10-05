@@ -57,7 +57,7 @@ const Banner = () => {
         </div>
         <div
           data-aos="fade-in"
-          className="h-fit w-fit flex justify-center items-center overflow-hidden"
+          className="h-fit w-fit flex justify-center items-center overflow-hidden banner_wrapper"
         >
           <Tilt className="track-on-window" trackOnWindow={true}>
             <Image

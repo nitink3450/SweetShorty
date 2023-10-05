@@ -213,6 +213,10 @@
       }
     }
 
+    /* .banner_wrapper img{
+      filter: drop-shadow(1px 1px 6px rgb(103, 103, 103));
+    } */
+
     .activeHead {
       /* background: linear-gradient(180deg, rgba(10, 10, 10, 0.20) 0%, rgba(10, 10, 10, 0.04) 100%);
       backdrop-filter: blur(20px); */

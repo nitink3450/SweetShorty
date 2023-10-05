@@ -138,7 +138,7 @@ const LoginPage = () => {
 
   return (
     <>
-      <div className="container">
+      <div className="container dark:bg-[#191919] transition-all ease-in duration-500">
         <div className="forms-container">
           <div className="signin-signup">
             <form
@@ -146,7 +146,7 @@ const LoginPage = () => {
               className="sign-in-form form"
               onSubmit={handleLoginSubmit}
             >
-              <h2 className="title">Sign in</h2>
+              <h2 className="title dark:text-white">Sign in</h2>
               <div className="input-field">
                 <i className="fas fa-user"></i>
                 <input
@@ -267,7 +267,7 @@ const LoginPage = () => {
               className="sign-up-form form"
               onSubmit={handleSignupSubmit}
             >
-              <h2 className="title">Sign up</h2>
+              <h2 className="title dark:text-white">Sign up</h2>
               <div className="input-field">
                 <i className="fas fa-user"></i>
                 <input

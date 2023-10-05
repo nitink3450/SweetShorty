@@ -9,8 +9,7 @@ import Head from "next/head";
 
 import React, { useState } from "react";
 
-export default function Home() {
-  const [isDarkModeOn, setIsDarkModeOn] = useState();
+export default function Home({isDarkModeOn}:any) {
 
   return (
     <>
@@ -27,10 +26,6 @@ export default function Home() {
       
 
       <main className="relative z-[2] dark:bg-[#191919] bg-white transition-all ease-in duration-500">
-        <ThemeToggle
-          isDarkModeOn={isDarkModeOn}
-          setIsDarkModeOn={setIsDarkModeOn}
-        />
         <Header />
         <section id="about" className="p-[10px] md:p-[24px] overflow-hidden">
           <Banner />
