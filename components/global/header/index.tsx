@@ -45,7 +45,7 @@ const Header = () => {
   return (
     <>
       {/* shadow-md  */}
-      <div className="w-full sticky top-0 left-0 right-0 z-50 md:overflow-hidden transition-all ease-in duration-100 ">
+      <div className="w-full sticky top-0 left-0 right-0 z-50 9xx:overflow-hidden transition-all ease-in duration-100 ">
         <div
           className={`9xx:flex dark:activeHeadDarkBorder activeHeadLightBorder dark:bg-[#191919] bg-white items-center justify-between product_nav  9xx:px-10 px-4 pb-4 pt-4 9xx:pt-10 z-50 relative transition-all ease-in duration-500`}
         >

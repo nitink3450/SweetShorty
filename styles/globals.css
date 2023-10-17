@@ -429,6 +429,7 @@
     @media screen and (min-width: 600px) {
       .box {
         background-image: url("../public/images/bg-boost-desktop.svg");
+        /* background-image: url("../public/images/blob.svg"); */
         background-position: bottom;
       }
     }
@@ -443,9 +444,7 @@
         z-index: 1;
       }
 
-
     }
-
 
 
     @media screen and (max-width:768px) {
