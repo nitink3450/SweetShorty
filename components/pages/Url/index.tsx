@@ -96,32 +96,31 @@ const Url = ({ isDarkModeOn }: any) => {
       const shortenLink = async () => {
         setIsShortning(true); // Set loading to true when fetch starts
         try {
-          // const res = await fetch(
-          //   // `https://api.shrtco.de/v2/shorten?url=${longUrl}`
-          //   // `http://tinyurl.com/api-create.php?url='.${longUrl}`
-          //   // `https://api.apilayer.com/short_url/hash/${longUrl}`
-          //   // `https://api-ssl.bitly.com/v4/shorten?url=${longUrl}`
-          //   // `https://url-shortener-service.p.rapidapi.com/shorten?url=${longUrl}`
-          //   // `https://ismaelc-bitly.p.rapidapi.com/v3/shorten=${longUrl}`
-          // );
-          // const res = await fetch(`https://shrtlnk.dev/api/v2/link/${longUrl}`);
-          const requestOptions = {
-            method: "POST",
-            headers: {
-              "api-key": apiKey,
-              Accept: "application/json",
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ url: longUrl }),
-          };
-
           const res = await fetch(
-            "https://shrtlnk.dev/api/v2/link",
-            requestOptions
+            `https://api.shrtco.de/v2/shorten?url=${longUrl}`
+            // `http://tinyurl.com/api-create.php?url='.${longUrl}`
+            // `https://api.apilayer.com/short_url/hash/${longUrl}`
+            // `https://api-ssl.bitly.com/v4/shorten?url=${longUrl}`
+            // `https://url-shortener-service.p.rapidapi.com/shorten?url=${longUrl}`
+            // `https://ismaelc-bitly.p.rapidapi.com/v3/shorten=${longUrl}`
           );
+          // const requestOptions = {
+          //   method: "POST",
+          //   headers: {
+          //     "api-key": apiKey,
+          //     Accept: "application/json",
+          //     "Content-Type": "application/json",
+          //   },
+          //   body: JSON.stringify({ url: longUrl }),
+          // };
+
+          // const res = await fetch(
+          //   "https://shrtlnk.dev/api/v2/link",
+          //   requestOptions
+          // );
           const data = await res.json();
 
-          console.log(data);
+          // console.log(data);
           // localStorage.setItem("links", JSON.stringify(data.result.full_short_link));
           setShortUrl(data.result.full_short_link);
         } catch (error) {
