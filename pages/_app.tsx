@@ -12,7 +12,6 @@ import AppContext from "@/context/AppContext";
 export default function App({ Component, pageProps }: AppProps) {
   const [isDarkModeOn, setIsDarkModeOn] = useState();
   const [isSignUp, setIsSignUp] = useState<boolean>(false);
-  console.log("isSignUp", isSignUp);
 
   useEffect(() => {
     AOS.init({
