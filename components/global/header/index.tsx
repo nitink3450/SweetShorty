@@ -1,15 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { TiThMenu, TiPlus } from "react-icons/ti";
 import Button2 from "../common/button2";
 import { LogoSvg, SweetShortySvg, SwenflySvg } from "../common/svgs";
 import { useMediaQuery } from "../common/UseMediaQuery/UseMediaQuery";
 import { Link } from "react-scroll";
 import Link1 from "next/link";
-import {Links} from "./headerLinks";
+import { Links } from "./headerLinks";
+import AppContext from "@/context/AppContext";
 
 const Header = () => {
- 
   let [open, setOpen] = useState(false);
+  const context = useContext(AppContext);
 
   const isMobile = useMediaQuery("(max-width:768px)");
 
@@ -40,6 +41,14 @@ const Header = () => {
     } else {
       document.documentElement.style.overflow = "scroll";
     }
+  };
+
+  const HandleSignUp = () => {
+    context?.setIsSignUp(true);
+  };
+
+  const HadleLogin = () => {
+    context?.setIsSignUp(false);
   };
 
   return (
@@ -117,23 +126,25 @@ const Header = () => {
             9xx:flex-row flex-col 9xx:justify-center items-start 9xx:items-center 9xx:gap-0 gap-10"
             >
               <li className="9xx:ml-8 text-xl 9xx:my-0">
-              <Link1 href="/login" passHref target="_self">
-                <p
-                  className="text-gray-800 dark:text-[#7b1fa2] dark:hover:text-[#30C59B] hover:text-[#30C59B] 9xx:mr-8 duration-500"
-                >
-                  Login
-                </p>
+                <Link1 href="/login" passHref target="_self">
+                  <p
+                    onClick={HadleLogin}
+                    className="text-gray-800 dark:text-[#7b1fa2] dark:hover:text-[#30C59B] hover:text-[#30C59B] 9xx:mr-8 duration-500"
+                  >
+                    Login
+                  </p>
                 </Link1>
               </li>
               {/* <Button>SignUp</Button> */}
               <Link1 href="/login" passHref target="_self">
-              <Button2
-                mr="group-hover:mr-[20px]"
-                ml="ml-[3px]"
-                class="lg:p-[6px_18px] p-[8px_20px] lg:text-xl text-[17.37px] outline outline-[0.1px] outline-[#30C59B] focus-within:outline-[#000]"
-              >
-                SignUp
-              </Button2>
+                <Button2
+                  onClick={HandleSignUp}
+                  mr="group-hover:mr-[20px]"
+                  ml="ml-[3px]"
+                  class="lg:p-[6px_18px] p-[8px_20px] lg:text-xl text-[17.37px] outline outline-[0.1px] outline-[#30C59B] focus-within:outline-[#000]"
+                >
+                  SignUp
+                </Button2>
               </Link1>
             </div>
           </ul>

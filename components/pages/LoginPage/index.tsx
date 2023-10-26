@@ -1,14 +1,16 @@
 import Button2 from "@/components/global/common/button2";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import {
   validateLoginForm,
   validateSignupForm,
 } from "../../../public/js/LoginValidation";
 import { useRouter } from "next/router";
 import { FaCheck, FaTimes, FaInfoCircle } from "react-icons/fa";
+import AppContext from "@/context/AppContext";
 
 const LoginPage = () => {
   const router = useRouter();
+  const context = useContext(AppContext);
 
   useEffect(() => {
     const sign_in_btn = document.querySelector("#sign-in-btn");
@@ -17,10 +19,18 @@ const LoginPage = () => {
 
     const addSignUpMode = () => {
       container?.classList.add("sign-up-mode");
+      context?.setIsSignUp(true);
     };
+
+    if (context?.isSignUp === true) {
+      container?.classList.add("sign-up-mode");
+    } else {
+      container?.classList.remove("sign-up-mode");
+    }
 
     const removeSignUpMode = () => {
       container?.classList.remove("sign-up-mode");
+      context?.setIsSignUp(false);
     };
 
     sign_up_btn?.addEventListener("click", addSignUpMode);
@@ -86,27 +96,29 @@ const LoginPage = () => {
     }
   };
 
-
-  const handlePasswordChange = (e: React.ChangeEvent<HTMLInputElement>, formType: string) => {
+  const handlePasswordChange = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    formType: string
+  ) => {
     const eventValue = e.target.value; // Get the event value
     let newPasswordLogin = loginForm.password; // Initialize newPassword for login form
     let newPasswordSignup = signupForm.password; // Initialize newPassword for signup form
-  
+
     if (formType === "login") {
       newPasswordLogin = eventValue; // Update newPassword for login form
     } else if (formType === "signup") {
       newPasswordSignup = eventValue; // Update newPassword for signup form
     }
-  
+
     setPassword(eventValue); // Set password to the current event value
-  
+
     // Check if the password meets all the criteria
     const hasLowerCase = /[a-z]/.test(eventValue);
     const hasUpperCase = /[A-Z]/.test(eventValue);
     const hasNumber = /\d/.test(eventValue);
     const hasSpecialChar = /[\W_]/.test(eventValue);
     const isMinLength = eventValue.length >= 8;
-  
+
     const conditionsMet = [
       hasLowerCase,
       hasUpperCase,
@@ -116,9 +128,9 @@ const LoginPage = () => {
     ];
     const conditionsPassed =
       conditionsMet.filter((condition) => condition).length === 5;
-  
+
     setIsValid(conditionsPassed);
-  
+
     // Update the appropriate form's password state
     if (formType === "login") {
       setLoginForm({ ...loginForm, password: newPasswordLogin });
