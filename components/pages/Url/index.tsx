@@ -15,7 +15,8 @@ const Url = ({ isDarkModeOn }: any) => {
   const qrCodeRef = useRef<HTMLDivElement | null>(null);
   const isMobile = useMediaQuery("(max-width:768px");
 
-  const apiKey: any = process.env.NEXT_PUBLIC_API_ACCESS_KEY;
+  const apiKeyShrtlnk: any = process.env.NEXT_PUBLIC_SHRTLNK_API_ACCESS_KEY;
+  const accessTokenBitly: any = process.env.NEXT_PUBLIC_API_BITLY_TOKEN;
 
   const [longUrl, setLongUrl] = useState("");
   const [shortUrl, setShortUrl] = useState("");
@@ -89,50 +90,87 @@ const Url = ({ isDarkModeOn }: any) => {
     });
   };
 
-  const handleShorten = () => {
+  // const handleShorten = () => {
+  //   if (!longUrl) {
+  //     alert("Input is empty");
+  //   } else {
+  //     const shortenLink = async () => {
+  //       setIsShortning(true); // Set loading to true when fetch starts
+  //       try {
+  //         const res = await fetch(
+  //           `https://api.shrtco.de/v2/shorten?url=${longUrl}`
+  //           // `http://tinyurl.com/api-create.php?url='.${longUrl}`
+  //           // `https://api.apilayer.com/short_url/hash/${longUrl}`
+  //           // `https://api-ssl.bitly.com/v4/shorten?url=${longUrl}`
+  //           // `https://url-shortener-service.p.rapidapi.com/shorten?url=${longUrl}`
+  //           // `https://ismaelc-bitly.p.rapidapi.com/v3/shorten=${longUrl}`
+  //         );
+  //         // const requestOptions = {
+  //         //   method: "POST",
+  //         //   headers: {
+  //         //     "api-key": apiKeyShrtlnk,
+  //         //     Accept: "application/json",
+  //         //     "Content-Type": "application/json",
+  //         //   },
+  //         //   body: JSON.stringify({ url: longUrl }),
+  //         // };
+
+  //         // const res = await fetch(
+  //         //   "https://shrtlnk.dev/api/v2/link",
+  //         //   requestOptions
+  //         // );
+  //         const data = await res.json();
+
+  //         // console.log(data);
+  //         // localStorage.setItem("links", JSON.stringify(data.result.full_short_link));
+  //         setShortUrl(data.result.full_short_link);
+  //       } catch (error) {
+  //         console.error("Error while fetching:", error);
+  //       } finally {
+  //         setIsShortning(false);
+  //       }
+  //     };
+
+  //     shortenLink();
+  //   }
+  // };
+
+  const handleShorten = async () => {
     if (!longUrl) {
       alert("Input is empty");
     } else {
-      const shortenLink = async () => {
-        setIsShortning(true); // Set loading to true when fetch starts
-        try {
-          const res = await fetch(
-            `https://api.shrtco.de/v2/shorten?url=${longUrl}`
-            // `http://tinyurl.com/api-create.php?url='.${longUrl}`
-            // `https://api.apilayer.com/short_url/hash/${longUrl}`
-            // `https://api-ssl.bitly.com/v4/shorten?url=${longUrl}`
-            // `https://url-shortener-service.p.rapidapi.com/shorten?url=${longUrl}`
-            // `https://ismaelc-bitly.p.rapidapi.com/v3/shorten=${longUrl}`
-          );
-          // const requestOptions = {
-          //   method: "POST",
-          //   headers: {
-          //     "api-key": apiKey,
-          //     Accept: "application/json",
-          //     "Content-Type": "application/json",
-          //   },
-          //   body: JSON.stringify({ url: longUrl }),
-          // };
-
-          // const res = await fetch(
-          //   "https://shrtlnk.dev/api/v2/link",
-          //   requestOptions
-          // );
-          const data = await res.json();
-
-          // console.log(data);
-          // localStorage.setItem("links", JSON.stringify(data.result.full_short_link));
-          setShortUrl(data.result.full_short_link);
-        } catch (error) {
-          console.error("Error while fetching:", error);
-        } finally {
-          setIsShortning(false);
+      setIsShortning(true); // Set loading to true when fetch starts
+  
+      try {
+        const response = await fetch('https://api-ssl.bitly.com/v4/shorten', {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${accessTokenBitly}`, // Replace {TOKEN} with your Bitly access token
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            "long_url": longUrl,
+            "domain": "bit.ly",
+          }),
+        });
+  
+        if (response.status === 200) {
+          const data = await response.json();
+          console.log("data",data);
+          
+          setShortUrl(data.link);
+        } else {
+          console.error('Failed to shorten URL. Status Code:', response.status);
         }
-      };
-
-      shortenLink();
+      } catch (error) {
+        console.error("Error while fetching:", error);
+      } finally {
+        setIsShortning(false);
+      }
     }
   };
+  
+  
 
   const handleCopy = () => {
     // Copy the short URL to the clipboard
