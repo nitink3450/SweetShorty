@@ -16,7 +16,10 @@ const Url = ({ isDarkModeOn }: any) => {
   const isMobile = useMediaQuery("(max-width:768px");
 
   const apiKeyShrtlnk: any = process.env.NEXT_PUBLIC_SHRTLNK_API_ACCESS_KEY;
-  const accessTokenBitly: any = process.env.NEXT_PUBLIC_API_BITLY_TOKEN;
+  const accessTokenBitly = process.env.NEXT_PUBLIC_API_BITLY_TOKEN;
+
+  console.log("accessTokenBitly-",accessTokenBitly);
+  
 
   const [longUrl, setLongUrl] = useState("");
   const [shortUrl, setShortUrl] = useState("");
