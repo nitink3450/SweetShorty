@@ -18,9 +18,6 @@ const Url = ({ isDarkModeOn }: any) => {
   const apiKeyShrtlnk: any = process.env.NEXT_PUBLIC_SHRTLNK_API_ACCESS_KEY;
   const accessTokenBitly = process.env.NEXT_PUBLIC_API_BITLY_TOKEN;
 
-  console.log("accessTokenBitly-",accessTokenBitly);
-  
-
   const [longUrl, setLongUrl] = useState("");
   const [shortUrl, setShortUrl] = useState("");
   const [isCopied, setIsCopied] = useState(false);
@@ -159,7 +156,7 @@ const Url = ({ isDarkModeOn }: any) => {
   
         if (response.status === 200) {
           const data = await response.json();
-          console.log("data",data);
+          // console.log("data",data);
           
           setShortUrl(data.link);
         } else {
