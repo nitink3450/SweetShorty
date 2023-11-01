@@ -1,10 +1,6 @@
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import FooterLinkList from "../common/footerLinkList";
-// import FacebookLogo from "../../../public/icons/icon-facebook.svg";
-// import TwitterLogo from "../../../public/icons/icon-twitter.svg";
-// import PinterestLogo from "../../../public/icons/icon-pinterest.svg";
-// import InstagramLogo from "../../../public/icons/icon-instagram.svg";
 import {
   LogoSvg,
   SwenflySvg,

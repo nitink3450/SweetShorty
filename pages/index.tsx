@@ -23,15 +23,14 @@ export default function Home({isDarkModeOn}:any) {
         <link rel="icon" href="/logo1.svg" />
       </Head>
 
-      
-
       <main className="relative z-[2] dark:bg-[#191919] bg-white transition-all ease-in duration-500">
         <Header />
+        
         <section id="about" className="p-[10px] md:p-[24px] overflow-hidden">
           <Banner />
         </section>
+
         <section id="service" className="p-[10px] md:p-[24px] overflow-hidden">
-          {/* <div  className="mt-[20px]"></div> */}
           <Url isDarkModeOn={isDarkModeOn} />
         </section>
 
