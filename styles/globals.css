@@ -659,7 +659,7 @@
       width: 100%;
       border-radius: 50%;
       /* background-color: var(--uib-color); */
-      background-color: #30C59B;
+      /* background-color: #30C59B; */
       animation: pulse var(--uib-speed) linear infinite;
       transform: scale(0);
       opacity: 0;

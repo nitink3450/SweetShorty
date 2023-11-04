@@ -16,7 +16,9 @@ export default function App({ Component, pageProps }: AppProps) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    // setTimeout(() => {
     setLoading(false);
+    // }, 5000);
   }, []);
 
   useEffect(() => {
@@ -31,9 +33,9 @@ export default function App({ Component, pageProps }: AppProps) {
 
   return (
     <>
-      {!loading ? (
-        <>
-          <ThemeProvider attribute="class">
+      <ThemeProvider attribute="class">
+        {!loading ? (
+          <>
             <AppContext.Provider value={{ isSignUp, setIsSignUp }}>
               <AnimatedCursor
                 innerSize={20}
@@ -62,13 +64,13 @@ export default function App({ Component, pageProps }: AppProps) {
               />
               <Component {...pageProps} isDarkModeOn={isDarkModeOn} />
             </AppContext.Provider>
-          </ThemeProvider>
-        </>
-      ) : (
-        <>
-          <Loading />
-        </>
-      )}
+          </>
+        ) : (
+          <>
+            <Loading />
+          </>
+        )}
+      </ThemeProvider>
     </>
   );
 }
