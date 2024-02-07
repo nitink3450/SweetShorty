@@ -1,0 +1,92 @@
+#content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cards {
+    display: flex;
+    gap: 5px;
+    width: 100%;
+    overflow-x: scroll;
+    padding-left: 150px;
+}
+
+.cards .card {
+    height: 657px;
+    min-width: 204px;
+    flex: 1;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all .5s;
+    background: #F1F1F3;
+    border: 1px solid #FFF;
+    color: #000;
+    transition: 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.cards .card .contentWrap {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100%;
+}
+
+.bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.cards .card span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cards .card span p {
+    transition: all .5s;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    writing-mode: vertical-lr;
+    rotate: 0deg;
+    transform-origin: top left;
+    transition: 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+    color: #000;
+    height: 450px;
+    width: fit-content;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+}
+
+.cards .card.active {
+    min-width: 607px;
+    max-width: 607px;
+    background: #000000;
+    color: #FFFF;
+}
+
+.cards .card.active .bar {
+    align-items: start;
+}
+
+.cards .card.active .number {
+    transition: 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+    transform: scale(0.7);
+    transform-origin: left;
+}
+
+.cards .card.active span p {
+    rotate: -90deg;
+    transform-origin: top left;
+    margin-top: 0px;
+    color: #FFFF;
+    writing-mode: vertical-rl;
+    left: 0;
+    top: 50px;
+    /* top: 100px;
+    height: 250px; */
+    transform: none;
+}

@@ -1,4 +1,5 @@
 import "@/styles/globals.css";
+import "@/styles/HoverCards.css";
 import "@/styles/login.css";
 import { useEffect, useState } from "react";
 import type { AppProps } from "next/app";
