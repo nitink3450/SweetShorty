@@ -1,0 +1,61 @@
+.space_screen {
+    height: 100vh;
+}
+
+.textCross {
+
+    .commonText {
+        font-size: 60px;
+        font-weight: 700px;
+
+        @media screen and (max-width:768px) {
+            font-size: 24px;
+        }
+    }
+
+    .sticky_blackText {
+        position: sticky;
+        top: 50%;
+        transform: translateY(-50%);
+        margin: 0 auto;
+        width: max-content;
+        text-align: center;
+        z-index: 10;
+        color: black;
+
+        @media screen and (max-width:768px) {
+            width: 100%;
+        }
+    }
+
+    .contentBox {
+        height: 200vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .assetBox {
+            position: relative;
+            overflow: hidden;
+            // width: 700px;
+            // height: 400px;
+            border-radius: 20px;
+
+
+            .whiteText {
+                position: absolute;
+                width: max-content;
+                margin: 0 auto;
+                text-align: center;
+                z-index: 20;
+                color: #fff;
+
+                @media screen and (max-width:768px) {
+                    width: 100%;
+                }
+            }
+
+        }
+    }
+
+}
